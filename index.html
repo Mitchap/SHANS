@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/output.css">
+    <link 
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+   />
+    <title>SHAN'S</title>
+</head>
+<body class="bg-[#23153c] h-100dvh min-h-screen overflow-y-hidden " >
+ <nav class="text-neutral-100 px-6 md:px-12 lg:px-24 xl:px-40 py-4 flex items-center justify-center relative">
+
+
+    <!-- Desktop Nav Items -->
+    <div class="hidden md:flex just items-center bg-zinc-50 border border-zinc-200 rounded-full px-1 py-1 gap-2">
+        <a href="#" class="px-4 py-1.5 rounded-full text-sm transition-colors bg-white border border-zinc-200 font-medium
+         text-zinc-800 hover:text-zinc-600">Home</a>
+        <a href="#" class="px-4 py-1.5 rounded-full text-sm transition-colors text-zinc-500 hover:text-zinc-400">Services</a>
+        <a href="#" class="px-4 py-1.5 rounded-full text-sm transition-colors text-zinc-500 hover:text-zinc-400">Reviews</a>
+        <a href="#" class="px-4 py-1.5 rounded-full text-sm transition-colors text-zinc-500 hover:text-zinc-400">About</a>
+    </div>
+
+
+
+    <!-- Mobile Hamburger -->
+    <button id="hamburger" onclick="toggleMenu()" class="md:hidden flex flex-col gap-1.5 cursor-pointer bg-transparent border-0 p-1">
+        <span id="bar1" class="block w-6 h-0.5 bg-zinc-800 transition-transform"></span>
+        <span id="bar2" class="block w-6 h-0.5 bg-zinc-800 transition-opacity"></span>
+        <span id="bar3" class="block w-6 h-0.5 bg-zinc-800 transition-transform"></span>
+    </button>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="hidden absolute top-full left-0 w-full bg-white border-t border-zinc-200 flex-col p-5 gap-1 md:hidden z-50">
+        <a href="#" class="block px-4 py-2.5 rounded-lg text-sm bg-zinc-50 font-medium text-zinc-800">Products</a>
+        <a href="#" class="block px-4 py-2.5 rounded-lg text-sm text-zinc-500 hover:bg-zinc-50">Services</a>
+        <a href="#" class="block px-4 py-2.5 rounded-lg text-sm text-zinc-500 hover:bg-zinc-50">Apps</a>
+        <a href="#" class="block px-4 py-2.5 rounded-lg text-sm text-zinc-500 hover:bg-zinc-50">Pricing</a>
+        <a href="#" class="block px-4 py-2.5 rounded-lg text-sm text-zinc-500 hover:bg-zinc-50">About</a>
+        <button class="flex items-center justify-center gap-2.5 bg-linear-to-r from-zinc-950 to-zinc-500 text-zinc-50 text-sm font-medium px-5 py-2.5 rounded-full cursor-pointer border-0 mt-3 w-fit">
+            Get started
+            <span class="w-7 h-7 rounded-full bg-white flex items-center justify-center">
+                <svg width="12" height="10" viewBox="0 0 12 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M.6 4.602h10m-4-4 4 4-4 4" stroke="#3f3f47" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+        </button>
+    </div>
+</nav>
+
+
+<!-- Hero section -->
+ <div id="mobile-navLinks" class="fixed inset-0 z-100 bg-black/40 text-white backdrop-blur flex flex-col items-center justify-center text-lg gap-8 md:hidden transition-transform duration-300 -translate-x-full">
+    <a href="/">
+        Home
+    </a>
+    <a href="/Home">
+        Products
+    </a>
+    <a href="/stories">
+        Stories
+    </a>
+    <a href="/pricing">
+        Pricing
+    </a>
+    <button id="close-menu" class="active:ring-3 active:ring-white aspect-square size-10 p-1 items-center justify-center bg-white hover:bg-slate-200 transition text-black rounded-md flex">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x-icon lucide-x"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+    </button>
+</div>
+
+
+<section class="flex flex-col max-md:gap-20 md:flex-row pb-20 items-center justify-between mt-20 px-4 md:px-16 lg:px-24 xl:px-32">
+    <div class="flex flex-col items-center md:items-start -mt-40 
+         animate__animated animate__fadeInLeft">
+        <!-- <div class="flex flex-wrap items-center justify-center p-1.5 rounded-full border border-slate-600 text-white text-xs">
+            <p class="-translate-x-2">Join community of 1m+ founders </p>
+        </div> -->
+        <h1 class="text-center md:text-left text-5xl leading-17 md:text-6xl md:leading-21 font-medium max-w-xl text-slate-50">
+            TRADE 'N <br/>
+            <span class="text-yellow-300">GAME CREDITS</span>
+        </h1>
+        <p class="text-center md:text-left text-sm text-slate-200 max-w-lg mt-2">
+        Top-ups for the games you love. Find your credits, check the price, and get ready to play.              </p>
+    </div>
+    <img src="media/starrail.png" alt="hero"
+     class="-mt-20 max-w-xs sm:max-w-sm lg:max-w-xl 
+            transition-all duration-300
+            animate__animated animate__fadeInRight">
+</section>
+
+</body>
+<script src="script/script.js"></script>
+
+</html>
