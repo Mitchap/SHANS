@@ -1,94 +1,463 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/output.css">
-    <link 
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-   />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/output.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css" integrity="sha512-QeR2VH+lsBE5LSAe1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg==" crossorigin="anonymous" referrerpolicy="no-referrer">
     <title>SHAN'S</title>
-</head>
-<body class="bg-[#23153c] h-100dvh min-h-screen overflow-y-hidden " >
- <nav class="text-neutral-100 px-6 md:px-12 lg:px-24 xl:px-40 py-4 flex items-center justify-center relative">
+  </head>
+  <body class="overflow-x-hidden">
+    <nav
+      class="text-neutral-100 px-6 md:px-12 lg:px-24 xl:px-40 py-4 flex items-center justify-center relative"
+    >
+      <!-- Desktop Nav Items -->
+      <div
+        class="hidden md:flex items-center bg-zinc-50 border border-zinc-200 rounded-full px-1 py-1 gap-2"
+      >
+        <a
+          href="#"
+          class="px-4 py-1.5 rounded-full text-sm transition-colors bg-white border border-zinc-200 font-medium text-zinc-800 hover:text-zinc-600"
+          >Home</a
+        >
+        <a
+          href="#"
+          class="px-4 py-1.5 rounded-full text-sm transition-colors text-zinc-500 hover:text-zinc-400"
+          >Top-Up</a
+        >
+        <a
+          href="#"
+          class="px-4 py-1.5 rounded-full text-sm transition-colors text-zinc-500 hover:text-zinc-400"
+          >Reviews</a
+        >
+        <a
+          href="#"
+          class="px-4 py-1.5 rounded-full text-sm transition-colors text-zinc-500 hover:text-zinc-400"
+          >About</a
+        >
+      </div>
 
+      <!-- Mobile Hamburger -->
+      <button
+        id="hamburger"
+        onclick="toggleMenu()"
+        class="md:hidden flex flex-col gap-1.5 cursor-pointer bg-transparent border-0 p-1"
+      >
+        <span
+          id="bar1"
+          class="block w-6 h-0.5 bg-zinc-800 transition-transform"
+        ></span>
+        <span
+          id="bar2"
+          class="block w-6 h-0.5 bg-zinc-800 transition-opacity"
+        ></span>
+        <span
+          id="bar3"
+          class="block w-6 h-0.5 bg-zinc-800 transition-transform"
+        ></span>
+      </button>
 
-    <!-- Desktop Nav Items -->
-    <div class="hidden md:flex just items-center bg-zinc-50 border border-zinc-200 rounded-full px-1 py-1 gap-2">
-        <a href="#" class="px-4 py-1.5 rounded-full text-sm transition-colors bg-white border border-zinc-200 font-medium
-         text-zinc-800 hover:text-zinc-600">Home</a>
-        <a href="#" class="px-4 py-1.5 rounded-full text-sm transition-colors text-zinc-500 hover:text-zinc-400">Services</a>
-        <a href="#" class="px-4 py-1.5 rounded-full text-sm transition-colors text-zinc-500 hover:text-zinc-400">Reviews</a>
-        <a href="#" class="px-4 py-1.5 rounded-full text-sm transition-colors text-zinc-500 hover:text-zinc-400">About</a>
+      <!-- Mobile Menu -->
+      <div
+        id="mobileMenu"
+        class="hidden absolute top-full left-0 w-full bg-white border-t border-zinc-200 flex-col p-5 gap-1 md:hidden z-50"
+      >
+        <a
+          href="#"
+          class="block px-4 py-2.5 rounded-lg text-sm bg-zinc-50 font-medium text-zinc-800"
+          >Home</a
+        >
+        <a
+          href="#"
+          class="block px-4 py-2.5 rounded-lg text-sm text-zinc-500 hover:bg-zinc-50"
+          >Top-Up</a
+        >
+        <a
+          href="#"
+          class="block px-4 py-2.5 rounded-lg text-sm text-zinc-500 hover:bg-zinc-50"
+          >Reviews</a
+        >
+        <a
+          href="#"
+          class="block px-4 py-2.5 rounded-lg text-sm text-zinc-500 hover:bg-zinc-50"
+          >About</a
+        >
+
+      </div>
+    </nav>
+
+    <!-- Hero section -->
+    <div
+      id="mobile-navLinks"
+      class="fixed inset-0 z-100 bg-black/40 text-white backdrop-blur flex 
+      flex-col items-center justify-center text-lg gap-8 md:hidden transition-transform 
+      duration-300 -translate-x-full"
+    >
+      <a href="/"> Home </a>
+      <a href="/Home"> Products </a>
+      <a href="/stories"> Stories </a>
+      <a href="/pricing"> Pricing </a>
+      <button
+        id="close-menu"
+        class="active:ring-3 active:ring-white aspect-square size-10 p-1 items-center justify-center bg-white hover:bg-slate-200 transition text-black rounded-md flex"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="lucide lucide-x-icon lucide-x"
+        >
+          <path d="M18 6 6 18" />
+          <path d="m6 6 12 12" />
+        </svg>
+      </button>
     </div>
 
+    <section
+      class="flex relative items-center justify-center px-4 md:px-16 lg:px-24 mt-20 md:mt-2"
+    >
 
 
-    <!-- Mobile Hamburger -->
-    <button id="hamburger" onclick="toggleMenu()" class="md:hidden flex flex-col gap-1.5 cursor-pointer bg-transparent border-0 p-1">
-        <span id="bar1" class="block w-6 h-0.5 bg-zinc-800 transition-transform"></span>
-        <span id="bar2" class="block w-6 h-0.5 bg-zinc-800 transition-opacity"></span>
-        <span id="bar3" class="block w-6 h-0.5 bg-zinc-800 transition-transform"></span>
-    </button>
+<h1
+  class="whitespace-nowrap text-[3rem] lg:text-[10rem]
+  font-medium tracking-wider font-anton
+  bg-linear-to-t
+  from-neutral-800 from-20%
+  via-neutral-100 via-40%
+  to-neutral-50 to-100%
+  bg-clip-text text-transparent
+  animate__animated animate__fadeIn animate__delay-1s"
+>
+  GAME TOP-UPS
+</h1>
 
-    <!-- Mobile Menu -->
-    <div id="mobileMenu" class="hidden absolute top-full left-0 w-full bg-white border-t border-zinc-200 flex-col p-5 gap-1 md:hidden z-50">
-        <a href="#" class="block px-4 py-2.5 rounded-lg text-sm bg-zinc-50 font-medium text-zinc-800">Products</a>
-        <a href="#" class="block px-4 py-2.5 rounded-lg text-sm text-zinc-500 hover:bg-zinc-50">Services</a>
-        <a href="#" class="block px-4 py-2.5 rounded-lg text-sm text-zinc-500 hover:bg-zinc-50">Apps</a>
-        <a href="#" class="block px-4 py-2.5 rounded-lg text-sm text-zinc-500 hover:bg-zinc-50">Pricing</a>
-        <a href="#" class="block px-4 py-2.5 rounded-lg text-sm text-zinc-500 hover:bg-zinc-50">About</a>
-        <button class="flex items-center justify-center gap-2.5 bg-linear-to-r from-zinc-950 to-zinc-500 text-zinc-50 text-sm font-medium px-5 py-2.5 rounded-full cursor-pointer border-0 mt-3 w-fit">
-            Get started
-            <span class="w-7 h-7 rounded-full bg-white flex items-center justify-center">
-                <svg width="12" height="10" viewBox="0 0 12 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M.6 4.602h10m-4-4 4 4-4 4" stroke="#3f3f47" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </span>
-        </button>
+
+      <img src="media/macbook.png" alt="macbook mockup of poster"
+      class="absolute w-100 md:w-200 mt-48 md:mt-110
+      animate__animated animate__fadeInUp">
+    </section>
+
+    <!-- Marketed Products -->
+
+<section class="w-full overflow-hidden py-12 md:py-16 mt-32 md:mt-64
+animate__animated animate__fadeIn  animate__delay-1s">
+  <div class="mx-auto mb-8 max-w-7xl px-6 md:px-12">
+    <p class="text-xs uppercase tracking-[0.3em] text-neutral-400">
+      Find your game
+    </p>
+
+    <div class="mt-2 flex items-end justify-between gap-4">
+      <h2 class="font-anton text-3xl text-white md:text-5xl">
+        SUPPORTED GAMES
+      </h2>
+
+      <a
+        href="catalogue.html"
+        class="shrink-0 text-sm text-neutral-100 transition hover:text-yellow-400"
+      >
+        View catalogue
+        <span aria-hidden="true">↗</span>
+      </a>
     </div>
-</nav>
+  </div>
 
+  <div
+    class="game-marquee group relative bg-black py-2"
+    aria-label="Supported games"
+  >
+    <!-- Left and right edge fades -->
+    <div
+      class="pointer-events-none absolute inset-y-0 left-0 z-10 w-10 bg-linear-to-r from-black to-transparent md:w-24"
+    ></div>
 
-<!-- Hero section -->
- <div id="mobile-navLinks" class="fixed inset-0 z-100 bg-black/40 text-white backdrop-blur flex flex-col items-center justify-center text-lg gap-8 md:hidden transition-transform duration-300 -translate-x-full">
-    <a href="/">
-        Home
-    </a>
-    <a href="/Home">
-        Products
-    </a>
-    <a href="/stories">
-        Stories
-    </a>
-    <a href="/pricing">
-        Pricing
-    </a>
-    <button id="close-menu" class="active:ring-3 active:ring-white aspect-square size-10 p-1 items-center justify-center bg-white hover:bg-slate-200 transition text-black rounded-md flex">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x-icon lucide-x"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
-    </button>
-</div>
+    <div
+      class="pointer-events-none absolute inset-y-0 right-0 z-10 w-10 bg-linear-to-l from-black to-transparent md:w-24"
+    ></div>
 
-
-<section class="flex flex-col max-md:gap-20 md:flex-row pb-20 items-center justify-between mt-20 px-4 md:px-16 lg:px-24 xl:px-32">
-    <div class="flex flex-col items-center md:items-start -mt-40 
-         animate__animated animate__fadeInLeft">
-        <!-- <div class="flex flex-wrap items-center justify-center p-1.5 rounded-full border border-slate-600 text-white text-xs">
-            <p class="-translate-x-2">Join community of 1m+ founders </p>
-        </div> -->
-        <h1 class="text-center md:text-left text-5xl leading-17 md:text-6xl md:leading-21 font-medium max-w-xl text-slate-50">
-            TRADE 'N <br/>
-            <span class="text-yellow-300">GAME CREDITS</span>
-        </h1>
-        <p class="text-center md:text-left text-sm text-slate-200 max-w-lg mt-2">
-        Top-ups for the games you love. Find your credits, check the price, and get ready to play.              </p>
+    <div id="game-track" class="game-track">
+      <div id="game-list" class="game-list"></div>
+      <div
+        id="game-list-clone"
+        class="game-list"
+        aria-hidden="true"
+      ></div>
     </div>
-    <img src="media/starrail.png" alt="hero"
-     class="-mt-20 max-w-xs sm:max-w-sm lg:max-w-xl 
-            transition-all duration-300
-            animate__animated animate__fadeInRight">
+  </div>
 </section>
 
-</body>
-<script src="script/script.js"></script>
 
+<!-- top up -->
+<section class="animate__animated animate__fadeIn animate__delay-1s flex items-center justify-center px-4 pb-16">
+    <div class="max-w-275 w-full">
+        <div class="flex flex-col items-start text-center mb-10">
+            <h1 class="text-2xl md:text-4xl font-medium text-white mt-5">Popular Games</h1>
+            <p class="text-sm text-white mt-2 max-w-sm">Choose the game you want to top up.</p>
+        </div>
+
+        <!-- cards -->
+        <div class="flex flex-col md:flex-row gap-10 items-center justify-left">
+                <div class="bg-white rounded-2xl pb-4 overflow-hidden border border-gray-200 hover:-translate-y-1 transition duration-300">
+        <img class="w-64 h-52 object-cover object-top" src="media/mlbb-card.jpg" alt="Mobile Legends">
+        <div class="flex flex-col items-center">
+            <p class="font-medium mt-3">Mobile Legends</p>
+
+        </div>
+    </div>
+        <div class="bg-white rounded-2xl pb-4 overflow-hidden border border-gray-200 hover:-translate-y-1 transition duration-300">
+        <img class="w-64 h-52 object-cover object-top" src="media/codm-card.jpg" alt="Call of Duty: Mobile">
+        <div class="flex flex-col items-center">
+            <p class="font-medium mt-3">Call of Duty: Mobile</p>
+
+        </div>
+    </div>
+        <div class="bg-white rounded-2xl pb-4 overflow-hidden border border-gray-200 hover:-translate-y-1 transition duration-300">
+        <img class="w-64 h-52 object-cover object-top" src="media/valorant-card.jpg" alt="Valorant">
+        <div class="flex flex-col items-center">
+            <p class="font-medium mt-3">Valorant</p>
+
+        </div>
+    </div>
+        </div>
+
+        <div class="flex justify-left mt-12">
+            <a href="#" class="flex items-center gap-2 text-sm text-white border border-neutral-100 px-4 py-2 rounded-lg transition-colors group">
+                View all games
+                <svg class='transition-transform duration-300 group-hover:translate-x-1' width="11" height="11" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M.5 5.164h9.333M5.167.5l4.666 4.667-4.666 4.666" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+        </div>
+    </div>
+</section>
+
+
+<!-- Reviews -->
+
+<section class="px-4 py-12 sm:px-6 md:py-16 lg:px-8">
+  <div class="mx-auto max-w-7xl">
+
+    <!-- Section heading -->
+    <div class="mx-auto max-w-2xl text-center">
+      <p class="text-xs font-semibold uppercase tracking-[0.3em] text-neutral-400">
+        Testimonials
+      </p>
+
+      <h2 class="mt-3 text-3xl font-bold text-white sm:text-4xl md:text-5xl">
+        What Our Customers Say
+      </h2>
+
+      <p class="mt-4 text-sm leading-6 text-neutral-400 sm:text-base">
+        Hear from customers about their experience with our services.
+      </p>
+    </div>
+
+    <!-- Responsive testimonial grid -->
+    <div class="mt-10 grid grid-cols-1 gap-5 sm:mt-12 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6">
+
+      <!-- Testimonial 1 -->
+      <article class="flex h-full flex-col rounded-xl border border-white/10 bg-neutral-900 p-5 transition duration-300 hover:-translate-y-1 hover:border-white/25 sm:p-6">
+
+        <!-- Quote icon -->
+        <svg
+          class="h-9 w-9 shrink-0 text-blue-500"
+          viewBox="0 0 44 40"
+          fill="currentColor"
+          aria-hidden="true"
+        >
+          <path d="M33.172 5.469q2.555 0 4.547 1.547a7.4 7.4 0 0 1 2.695 4.007q.47 1.711.469 3.61 0 2.883-1.125 5.86a22.8 22.8 0 0 1-3.094 5.577 33 33 0 0 1-4.57 4.922A35 35 0 0 1 26.539 35l-3.398-3.398q5.296-4.243 7.218-6.563 1.946-2.32 2.016-4.617-2.86-.329-4.781-2.461-1.923-2.133-1.922-4.992 0-3.117 2.18-5.297 2.202-2.203 5.32-2.203m-20.625 0q2.555 0 4.547 1.547a7.4 7.4 0 0 1 2.695 4.007q.47 1.711.469 3.61 0 2.883-1.125 5.86a22.8 22.8 0 0 1-3.094 5.577 33 33 0 0 1-4.57 4.922A35 35 0 0 1 5.914 35l-3.398-3.398q5.296-4.243 7.218-6.563 1.946-2.32 2.016-4.617-2.86-.329-4.781-2.461-1.922-2.133-1.922-4.992 0-3.117 2.18-5.297 2.202-2.203 5.32-2.203"/>
+        </svg>
+
+        <!-- Rating -->
+        <div class="mt-5 flex gap-1 text-orange-400" aria-label="5 out of 5 stars">
+          <span aria-hidden="true">★★★★★</span>
+        </div>
+
+        <!-- Review -->
+        <p class="mt-4 flex-1 text-sm leading-7 text-neutral-300">
+          PrebuiltUI strikes the perfect balance between flexibility,
+          simplicity and visual consistency.
+        </p>
+
+        <!-- Customer -->
+        <div class="mt-6 flex items-center gap-3 border-t border-white/10 pt-5">
+                 <i class="fa-solid fa-circle-user text-gray-400 text-4xl"></i>
+
+
+          <div class="min-w-0">
+            <h3 class="truncate text-sm font-semibold text-white">
+              Mitch Vito
+            </h3>
+            <p class="mt-1 text-xs text-neutral-500">Verified customer</p>
+          </div>
+        </div>
+      </article>
+
+      <!-- Testimonial 2 -->
+      <article class="flex h-full flex-col rounded-xl border border-white/10 bg-neutral-900 p-5 transition duration-300 hover:-translate-y-1 hover:border-white/25 sm:p-6">
+
+        <svg
+          class="h-9 w-9 shrink-0 text-blue-500"
+          viewBox="0 0 44 40"
+          fill="currentColor"
+          aria-hidden="true"
+        >
+          <path d="M33.172 5.469q2.555 0 4.547 1.547a7.4 7.4 0 0 1 2.695 4.007q.47 1.711.469 3.61 0 2.883-1.125 5.86a22.8 22.8 0 0 1-3.094 5.577 33 33 0 0 1-4.57 4.922A35 35 0 0 1 26.539 35l-3.398-3.398q5.296-4.243 7.218-6.563 1.946-2.32 2.016-4.617-2.86-.329-4.781-2.461-1.923-2.133-1.922-4.992 0-3.117 2.18-5.297 2.202-2.203 5.32-2.203m-20.625 0q2.555 0 4.547 1.547a7.4 7.4 0 0 1 2.695 4.007q.47 1.711.469 3.61 0 2.883-1.125 5.86a22.8 22.8 0 0 1-3.094 5.577 33 33 0 0 1-4.57 4.922A35 35 0 0 1 5.914 35l-3.398-3.398q5.296-4.243 7.218-6.563 1.946-2.32 2.016-4.617-2.86-.329-4.781-2.461-1.922-2.133-1.922-4.992 0-3.117 2.18-5.297 2.202-2.203 5.32-2.203"/>
+        </svg>
+
+        <div class="mt-5 flex gap-1 text-orange-400" aria-label="5 out of 5 stars">
+          <span aria-hidden="true">★★★★★</span>
+        </div>
+
+        <p class="mt-4 flex-1 text-sm leading-7 text-neutral-300">
+          Clean layouts, responsive design and easy integration make
+          PrebuiltUI incredibly valuable.
+        </p>
+
+        <div class="mt-6 flex items-center gap-3 border-t border-white/10 pt-5">
+                 <i class="fa-solid fa-circle-user text-gray-400 text-4xl"></i>
+
+
+          <div class="min-w-0">
+            <h3 class="truncate text-sm font-semibold text-white">
+              Jian Maguate
+            </h3>
+            <p class="mt-1 text-xs text-neutral-500">Verified customer</p>
+          </div>
+        </div>
+      </article>
+
+      <!-- Testimonial 3 -->
+      <article class="flex h-full flex-col rounded-xl border border-white/10 bg-neutral-900 p-5 transition duration-300 hover:-translate-y-1 hover:border-white/25 sm:col-span-2 lg:col-span-1 sm:p-6">
+
+        <svg
+          class="h-9 w-9 shrink-0 text-blue-500"
+          viewBox="0 0 44 40"
+          fill="currentColor"
+          aria-hidden="true"
+        >
+          <path d="M33.172 5.469q2.555 0 4.547 1.547a7.4 7.4 0 0 1 2.695 4.007q.47 1.711.469 3.61 0 2.883-1.125 5.86a22.8 22.8 0 0 1-3.094 5.577 33 33 0 0 1-4.57 4.922A35 35 0 0 1 26.539 35l-3.398-3.398q5.296-4.243 7.218-6.563 1.946-2.32 2.016-4.617-2.86-.329-4.781-2.461-1.923-2.133-1.922-4.992 0-3.117 2.18-5.297 2.202-2.203 5.32-2.203m-20.625 0q2.555 0 4.547 1.547a7.4 7.4 0 0 1 2.695 4.007q.47 1.711.469 3.61 0 2.883-1.125 5.86a22.8 22.8 0 0 1-3.094 5.577 33 33 0 0 1-4.57 4.922A35 35 0 0 1 5.914 35l-3.398-3.398q5.296-4.243 7.218-6.563 1.946-2.32 2.016-4.617-2.86-.329-4.781-2.461-1.922-2.133-1.922-4.992 0-3.117 2.18-5.297 2.202-2.203 5.32-2.203"/>
+        </svg>
+
+        <div class="mt-5 flex gap-1 text-orange-400" aria-label="5 out of 5 stars">
+          <span aria-hidden="true">★★★★★</span>
+        </div>
+
+        <p class="mt-4 flex-1 text-sm leading-7 text-neutral-300">
+          This library helped me ship client projects faster with better
+          and more beautiful design experiences.
+        </p>
+
+        <div class="mt-6 flex items-center gap-3 border-t border-white/10 pt-5">
+                 <i class="fa-solid fa-circle-user text-gray-400 text-4xl"></i>
+
+
+          <div class="min-w-0">
+            <h3 class="truncate text-sm font-semibold text-white">
+              Lei Min-ho
+            </h3>
+            <p class="mt-1 text-xs text-neutral-500">Verified customer</p>
+          </div>
+        </div>
+      </article>
+
+    </div>
+    <div class="flex justify-left mt-12">
+        <a href="#" class="flex items-center gap-2 text-sm text-white border border-neutral-100 px-4 py-2 rounded-lg transition-colors group">
+            Read more
+            <svg class='transition-transform duration-300 group-hover:translate-x-1' width="11" height="11" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M.5 5.164h9.333M5.167.5l4.666 4.667-4.666 4.666" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+    </div>
+</div>
+</section>
+
+
+<footer class="flex flex-wrap justify-center lg:justify-between overflow-hidden gap-10 md:gap-20 py-16 px-6 md:px-16 lg:px-24 xl:px-32 text-[13px] text-gray-500 bg-black">
+    <div class="flex flex-wrap items-start gap-10 md:gap-15 xl:gap-35">
+        <a href="https://prebuiltui.com">
+            <svg width="31" height="34" viewBox="0 0 31 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="m8.75 5.3 6.75 3.884 6.75-3.885M8.75 28.58v-7.755L2 16.939m27 0-6.75 3.885v7.754M2.405 9.408 15.5 16.954l13.095-7.546M15.5 32V16.939M29 22.915V10.962a2.98 2.98 0 0 0-1.5-2.585L17 2.4a3.01 3.01 0 0 0-3 0L3.5 8.377A3 3 0 0 0 2 10.962v11.953A2.98 2.98 0 0 0 3.5 25.5L14 31.477a3.01 3.01 0 0 0 3 0L27.5 25.5a3 3 0 0 0 1.5-2.585" stroke="url(#a)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <defs>
+                    <linearGradient id="a" x1="15.5" y1="2" x2="15.5" y2="32" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#F8FAFC"/>
+                    <stop offset="1" stop-color="#383838"/>
+                    </linearGradient>
+                </defs>
+            </svg>
+        </a>
+        <div>
+            <p class="text-slate-100 font-semibold">Product</p>
+            <ul class="mt-2 space-y-2">
+                <li><a href="/" class="hover:text-indigo-600 transition">Home</a></li>
+                <li><a href="/" class="hover:text-indigo-600 transition">Support</a></li>
+                <li><a href="/" class="hover:text-indigo-600 transition">Pricing</a></li>
+                <li><a href="/" class="hover:text-indigo-600 transition">Affiliate</a></li>
+            </ul>
+        </div>
+        <div>
+            <p class="text-slate-100 font-semibold">Resources</p>
+            <ul class="mt-2 space-y-2">
+                <li><a href="/" class="hover:text-indigo-600 transition">Company</a></li>
+                <li><a href="/" class="hover:text-indigo-600 transition">Blogs</a></li>
+                <li><a href="/" class="hover:text-indigo-600 transition">Community</a></li>
+                <li><a href="/" class="hover:text-indigo-600 transition">Careers<span class="text-xs text-white bg-indigo-600 rounded-md ml-2 px-2 py-1">We’re hiring!</span></a></li>
+                <li><a href="/" class="hover:text-indigo-600 transition">About</a></li>
+            </ul>
+        </div>
+        <div>
+            <p class="text-slate-100 font-semibold">Legal</p>
+            <ul class="mt-2 space-y-2">
+                <li><a href="/" class="hover:text-indigo-600 transition">Privacy</a></li>
+                <li><a href="/" class="hover:text-indigo-600 transition">Terms</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="flex flex-col max-md:items-center max-md:text-center gap-2 items-end">
+        <p class="max-w-60">Making every customer feel valued—no matter the size of your audience.</p>
+        <div class="flex items-center gap-4 mt-3">
+            <a href="https://dribbble.com/prebuiltui" target="_blank" rel="noreferrer">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-dribbble size-5 hover:text-indigo-500" aria-hidden="true">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <path d="M19.13 5.09C15.22 9.14 10 10.44 2.25 10.94"></path>
+                    <path d="M21.75 12.84c-6.62-1.41-12.14 1-16.38 6.32"></path>
+                    <path d="M8.56 2.75c4.37 6 6 9.42 8 17.72"></path>
+                </svg>
+            </a>
+            <a href="https://www.linkedin.com/company/prebuiltui" target="_blank" rel="noreferrer">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-linkedin size-5 hover:text-indigo-500" aria-hidden="true">
+                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                    <rect width="4" height="12" x="2" y="9"></rect>
+                    <circle cx="4" cy="4" r="2"></circle>
+                </svg>
+            </a>
+            <a href="https://x.com/prebuiltui" target="_blank" rel="noreferrer">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-twitter size-5 hover:text-indigo-500" aria-hidden="true">
+                    <path
+                        d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z">
+                    </path>
+                </svg>
+            </a>
+            <a href="https://www.youtube.com/@prebuiltui" target="_blank" rel="noreferrer">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-youtube size-6 hover:text-indigo-500" aria-hidden="true">
+                    <path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17">
+                    </path>
+                    <path d="m10 15 5-3-5-3z"></path>
+                </svg>
+            </a>
+        </div>
+        <p class="mt-3 text-center">© 2026 <a href="https://prebuiltui.com">SHAN'S TRADE 'N GAME CREDITS</a></p>
+    </div>
+</footer>
+  </body>
+  <script src="script/script.js"></script>
 </html>
