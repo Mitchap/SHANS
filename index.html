@@ -11,7 +11,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css" integrity="sha512-QeR2VH+lsBE5LSAe1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg==" crossorigin="anonymous" referrerpolicy="no-referrer">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="./css/chatbot.css" />
     <title>SHAN'S</title>
   </head>
   <body class="overflow-x-hidden">
@@ -400,7 +401,7 @@ animate__animated animate__fadeIn  animate__delay-1s">
             <p class="text-slate-100 font-semibold">Product</p>
             <ul class="mt-2 space-y-2">
                 <li><a href="/" class="hover:text-indigo-600 transition">Home</a></li>
-                <li><a href="/" class="hover:text-indigo-600 transition">Support</a></li>
+                <li><a href="#" onclick="event.preventDefault(); if (window.ShansChatbot) window.ShansChatbot.open();" class="hover:text-indigo-600 transition">Support (AI Chat)</a></li>
                 <li><a href="/" class="hover:text-indigo-600 transition">Pricing</a></li>
                 <li><a href="/" class="hover:text-indigo-600 transition">Affiliate</a></li>
             </ul>
@@ -461,4 +462,5 @@ animate__animated animate__fadeIn  animate__delay-1s">
 </footer>
   </body>
   <script src="script/script.js"></script>
+  <script src="script/chatbot.js"></script>
 </html>
