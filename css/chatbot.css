@@ -559,7 +559,7 @@
 }
 
 .chat-option-btn.chat-action-link:hover {
-    background: linear-gradient(135deg, #0084ff 0%, #7c3aed 100%) !important;
+    background: #7052A0 !important;
     border-color: #bfdbfe !important;
     color: #ffffff !important;
     transform: translateY(-2px) scale(1.01);

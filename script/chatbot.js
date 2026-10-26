@@ -57,12 +57,7 @@
         // --- CONVERT LOAD TO GCASH / TRADE ---
         load_gcash_menu: {
             message: "📲 Convert Regular Load to GCash:\n\nNeed to turn your unused phone load into real cash? SHAN'S offers fast, trusted load-to-GCash conversion!\n\n✅ Supported Networks:\n• Smart & TNT (via Pasaload)\n• Globe & TM (via Share-a-Load)\n• DITO Telecommunity\n\n⚡ How the process works:\n1️⃣ Check the current conversion rate with our agent.\n2️⃣ Transfer load to our designated number via Pasaload/Share-a-Load.\n3️⃣ Send the transfer confirmation SMS.\n4️⃣ Receive your GCash payout instantly (typically 1-3 minutes)!\n\n💡 Click below to open Messenger and start your conversion directly with our live trade agent:",
-            actionCard: {
-                title: "📲 Load to GCash Checkout",
-                desc: "Instant conversion via Smart, Globe, TNT, TM, and DITO.",
-                url: MESSENGER_LINKS.loadToGcash,
-                text: "💬 Finalize Order on Messenger"
-            },
+
             options: [
                 { text: "Finalize Order on Messenger", url: MESSENGER_LINKS.loadToGcash, icon: "💬" },
                 { text: "Load Conversion Rates & Limits", action: "load_rates", icon: "📊" },
@@ -73,12 +68,7 @@
 
         load_rates: {
             message: "📊 Load to GCash Rates & Trade Limits:\n\n💰 Standard Conversion Rates:\n• Smart / TNT: ~75% - 80% net payout\n• Globe / TM: ~75% - 80% net payout\n• DITO: ~75% net payout\n• Example: ₱500 load converts to ~₱400 GCash.\n\n📌 Trade Limits:\n• Minimum trade: ₱100 load\n• Maximum trade: ₱5,000 load per day\n• Zero hidden fees—what we quote is what you receive in GCash!\n\nReady to trade?",
-            actionCard: {
-                title: "📲 Ready to Trade Load?",
-                desc: "Message our trade desk to lock in today's best rate.",
-                url: MESSENGER_LINKS.loadToGcash,
-                text: "💬 Finalize Order on Messenger"
-            },
+
             options: [
                 { text: "Finalize Order on Messenger", url: MESSENGER_LINKS.loadToGcash, icon: "💬" },
                 { text: "Back to Load Menu", action: "load_gcash_menu", icon: "📲" },
@@ -101,12 +91,7 @@
 
         topup_valorant: {
             message: "🎯 Valorant Points (VP) Guide:\n\n✅ What is required:\n• Riot ID and Tagline (e.g., Player#1234)\n• Region must be Philippines (PH / SEA)\n\n⚡ How to order:\n1️⃣ Pick your preferred VP denomination.\n2️⃣ Provide your Riot ID + Tagline during checkout.\n3️⃣ Send payment via GCash/Maya and submit screenshot proof.\n4️⃣ VP will be credited directly to your account within 1-5 minutes!\n\n🔒 No password or Riot login details required!",
-            actionCard: {
-                title: "🎯 Valorant Points Checkout",
-                desc: "Fast direct credit to your Riot ID via GCash or Maya.",
-                url: MESSENGER_LINKS.orderValorant,
-                text: "💬 Finalize Order on Messenger"
-            },
+
             options: [
                 { text: "Finalize Order on Messenger", url: MESSENGER_LINKS.orderValorant, icon: "💬" },
                 { text: "View Payment Options", action: "payment_menu", icon: "💳" },
@@ -117,12 +102,7 @@
 
         topup_mlbb: {
             message: "🗡️ Mobile Legends: Bang Bang Diamonds Guide:\n\n✅ What is required:\n• User ID (numbers before parentheses)\n• Zone ID (4 or 5 digits in parentheses)\n• Example: 12345678 (1234)\n\n⚡ Features available:\n• Weekly Diamond Pass\n• Twilight Pass\n• Regular Diamonds (up to 6,000+ packs)\n• Starlight Membership\n\n💡 Tip: Find both IDs by tapping your profile avatar in the upper left corner of the MLBB lobby.",
-            actionCard: {
-                title: "🗡️ Mobile Legends Checkout",
-                desc: "Weekly Pass, Twilight Pass & Diamond packs via direct deposit.",
-                url: MESSENGER_LINKS.orderMlbb,
-                text: "💬 Finalize Order on Messenger"
-            },
+
             options: [
                 { text: "Finalize Order on Messenger", url: MESSENGER_LINKS.orderMlbb, icon: "💬" },
                 { text: "Payment Methods", action: "payment_menu", icon: "💳" },
@@ -134,12 +114,7 @@
 
         topup_codm: {
             message: "🔫 Call of Duty: Mobile (CP) Guide:\n\n✅ What is required:\n• Garena OpenID or Player UID\n• Server: Garena (PH/SEA)\n\n⚡ How to find your OpenID:\n1️⃣ Open CODM and go to Settings (Gear icon).\n2️⃣ Tap the 'OTHER' or 'LEGAL AND PRIVACY' tab.\n3️⃣ Locate your OpenID and tap 'Copy'.\n\n🛡️ Safe & fast direct top-up. No account access required!",
-            actionCard: {
-                title: "🔫 CODM CP Checkout",
-                desc: "Safe Garena direct top-up dispatched in 1-5 minutes.",
-                url: MESSENGER_LINKS.orderCodm,
-                text: "💬 Finalize Order on Messenger"
-            },
+
             options: [
                 { text: "Finalize Order on Messenger", url: MESSENGER_LINKS.orderCodm, icon: "💬" },
                 { text: "View Payment Methods", action: "payment_menu", icon: "💳" },
@@ -150,12 +125,7 @@
 
         topup_hoyoverse: {
             message: "🔮 Genshin Impact & Honkai: Star Rail Guide:\n\n✅ Supported Products:\n• Genesis Crystals & Blessing of the Welkin Moon\n• Oneiric Shards & Express Supply Pass\n\n📋 Information needed:\n• In-game UID (bottom right of your screen)\n• Server selection (Asia / America / Europe / TW, HK, MO)\n\n⚡ 100% official direct top-up through authorized partner channels. No login needed!",
-            actionCard: {
-                title: "🔮 HoYoverse Checkout",
-                desc: "Blessing of Welkin, Express Pass, and Crystals direct to your UID.",
-                url: MESSENGER_LINKS.orderHoyoverse,
-                text: "💬 Finalize Order on Messenger"
-            },
+
             options: [
                 { text: "Finalize Order on Messenger", url: MESSENGER_LINKS.orderHoyoverse, icon: "💬" },
                 { text: "Learn about Safety", action: "safety_menu", icon: "🛡️" },
@@ -166,12 +136,7 @@
 
         topup_others: {
             message: "🕹️ Other Supported Games:\n\nWe provide top-ups for over 15+ popular titles:\n• League of Legends: Riot Points (PC)\n• League of Legends: Wild Rift (Wild Cores)\n• Teamfight Tactics (TFT Coins)\n• Dragon Nest Mobile Cash (DNMC)\n• Zenless Zone Zero (Monochrome)\n• CrossFire (E-Coins)\n• Blood Strike (Gold & Strike Pass)\n• Undawn (Raven Coins)\n• Legends of Runeterra (Coins)\n• Magic Chess: Go Go (Diamonds)\n\nReady to place an order?",
-            actionCard: {
-                title: "🕹️ Game Credits Checkout",
-                desc: "Order credits for LoL, Wild Rift, TFT, CrossFire, and more.",
-                url: MESSENGER_LINKS.orderGeneral,
-                text: "💬 Finalize Order on Messenger"
-            },
+
             options: [
                 { text: "Finalize Order on Messenger", url: MESSENGER_LINKS.orderGeneral, icon: "💬" },
                 { text: "Back to Top-Up Menu", action: "topup_menu", icon: "🎮" },
@@ -211,12 +176,7 @@
 
         payment_proof: {
             message: "🧾 Submitting Payment Proof:\n\nTo ensure swift order processing, please make sure your receipt shows:\n• Reference Number / Transaction ID\n• Date & exact timestamp\n• Amount paid\n• Sender & recipient details\n\n⚠️ Avoid cropped or blurry screenshots to prevent verification delays.\n\nYou can submit your payment proof directly to our live agent on Messenger:",
-            actionCard: {
-                title: "🧾 Send Payment Proof",
-                desc: "Send your GCash / Maya screenshot to our live desk.",
-                url: MESSENGER_LINKS.orderGeneral,
-                text: "💬 Finalize Order on Messenger"
-            },
+
             options: [
                 { text: "Finalize Order on Messenger", url: MESSENGER_LINKS.orderGeneral, icon: "💬" },
                 { text: "How fast is delivery?", action: "delivery_menu", icon: "⚡" },
@@ -238,12 +198,7 @@
 
         delivery_delay: {
             message: "❓ Credits Not Showing Up? Let's check:\n\n1️⃣ Restart your game client:\nOften the game cache needs a quick restart to reflect new balance.\n\n2️⃣ Check your entered ID:\nMake sure the Player UID or Server entered during checkout matched your account exactly.\n\n3️⃣ Server maintenance:\nOccasionally game publishers (e.g. Riot, Moonton) experience server lag during updates.\n\n💬 If 15 minutes have passed, please click below to connect with our live support agent with your Reference Number!",
-            actionCard: {
-                title: "⚡ Order Assistance Desk",
-                desc: "Live check on order status and delivery confirmation.",
-                url: MESSENGER_LINKS.orderStatus,
-                text: "💬 Speak to Live Agent"
-            },
+
             options: [
                 { text: "Speak to Live Agent", url: MESSENGER_LINKS.orderStatus, icon: "💬" },
                 { text: "Refund Policy", action: "refund_policy", icon: "🔄" },
@@ -286,12 +241,7 @@
         // --- PROMOS & RATES ---
         promos_menu: {
             message: "💎 Promos, Rates & Reseller Program:\n\n🏷️ Discounted Rates:\n• Our game credit packages are consistently 5% to 15% cheaper than official app stores (Google Play & Apple Store) because there are no app store surcharges!\n\n🤝 Reseller & Bulk Orders:\n• Are you a gaming guild leader or aspiring game top-up reseller?\n• We offer wholesale bulk pricing for high-volume buyers with priority dispatch.\n\n🎁 Seasonal Giveaways:\n• Follow our social channels for monthly skin giveaways and discount vouchers!",
-            actionCard: {
-                title: "🤝 Join the Reseller Program",
-                desc: "Get exclusive wholesale discounts and bulk order pricing.",
-                url: MESSENGER_LINKS.resellerInquiry,
-                text: "💬 Inquire on Messenger"
-            },
+
             options: [
                 { text: "Inquire About Reseller on Messenger", url: MESSENGER_LINKS.resellerInquiry, icon: "💬" },
                 { text: "Browse Supported Games", action: "topup_menu", icon: "🎮" },
@@ -302,12 +252,6 @@
         // --- HUMAN AGENT SUPPORT ---
         agent_support: {
             message: "💬 Connect with SHAN'S Live Support:\n\nNeed assistance with a specific order, custom top-up, load conversion, or reseller inquiry? Our live human support team is ready to assist you on Facebook Messenger!\n\n🕒 Support Hours:\n• Monday to Sunday: 9:00 AM – 12:00 AM Midnight (PHT)\n\n⚡ Instant Direct Messenger:\nClick the button below to open a direct chat. Your message will be pre-filled so our agent can assist you immediately!",
-            actionCard: {
-                title: "💬 Live Agent Support",
-                desc: "Connect directly with our support team on Facebook Messenger.",
-                url: MESSENGER_LINKS.liveAgent,
-                text: "💬 Speak to Live Agent"
-            },
             options: [
                 { text: "Speak to Live Agent", url: MESSENGER_LINKS.liveAgent, icon: "💬" },
                 { text: "Convert Load to GCash", action: "load_gcash_menu", icon: "📲" },
@@ -513,7 +457,7 @@
                     ...opt,
                     text: typeof opt.text === 'function' ? opt.text() : opt.text
                 }));
-                addMessage(message, true, options, menu.actionCard || null);
+                addMessage(message, true, options || null);
             } else {
                 // Fallback to main menu
                 addMessage("I'm sorry, I couldn't find that section. Let me take you back to the main menu.", true, botMenus.main.options);
@@ -546,17 +490,17 @@
 
             if (matchedRoute && botMenus[matchedRoute.action]) {
                 const menu = botMenus[matchedRoute.action];
-                addMessage(menu.message, true, menu.options, menu.actionCard || null);
+                addMessage(menu.message, true, menu.options || null);
             } else {
                 addMessage(
                     `Thank you for asking! I couldn't match "${trimmed}" directly, but you can choose one of the options below or chat directly with a live agent:`,
                     true,
                     [
-                        { text: "💬 Speak to Live Agent", url: MESSENGER_LINKS.liveAgent, icon: "💬" },
-                        { text: "📲 Convert Load to GCash", action: "load_gcash_menu", icon: "📲" },
-                        { text: "🎮 How to Top-Up", action: "topup_menu", icon: "🎮" },
-                        { text: "💳 Payment Methods", action: "payment_menu", icon: "💳" },
-                        { text: "🏠 Main Menu", action: "main", icon: "🏠" }
+                        { text: "Speak to Live Agent", url: MESSENGER_LINKS.liveAgent, icon: "💬" },
+                        { text: "Convert Load to GCash", action: "load_gcash_menu", icon: "📲" },
+                        { text: "How to Top-Up", action: "topup_menu", icon: "🎮" },
+                        { text: "Payment Methods", action: "payment_menu", icon: "💳" },
+                        { text: "Main Menu", action: "main", icon: "🏠" }
                     ]
                 );
             }
@@ -567,7 +511,7 @@
     function restartChat() {
         chatHistory = [];
         const mainMenu = botMenus.main;
-        addMessage(mainMenu.message, true, mainMenu.options, mainMenu.actionCard || null);
+        addMessage(mainMenu.message, true, mainMenu.options|| null);
     }
 
     // Build chatbot UI DOM elements dynamically if not already in document
