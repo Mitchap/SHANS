@@ -15,6 +15,116 @@ window.addEventListener("beforeunload", () => {
   window.scrollTo(0, 0);
 });
     
+
+// nav script
+const desktopNav = document.getElementById("desktopNav");
+
+function updateNav() {
+  if (window.scrollY > 50) {
+    desktopNav.classList.add(
+      "bg-white/10",
+      "backdrop-blur-md",
+      "border-white/20"
+    );
+
+    desktopNav.classList.remove(
+      "bg-zinc-50",
+      "border-zinc-200"
+    );
+  } else {
+    desktopNav.classList.remove(
+      "bg-white/10",
+      "backdrop-blur-md",
+      "border-white/20"
+    );
+
+    desktopNav.classList.add(
+      "bg-zinc-50",
+      "border-zinc-200"
+    );
+  }
+}
+
+window.addEventListener("scroll", updateNav);
+updateNav();
+
+desktopNav.addEventListener("mouseenter", () => {
+  if (window.scrollY > 50) {
+    desktopNav.classList.add("bg-white", "border-zinc-200");
+
+    desktopNav.classList.remove(
+      "bg-white/10",
+      "border-white/20"
+    );
+  }
+});
+
+desktopNav.addEventListener("mouseleave", () => {
+  if (window.scrollY > 50) {
+    desktopNav.classList.add(
+      "bg-white/10",
+      "border-white/20"
+    );
+
+    desktopNav.classList.remove("bg-white", "border-zinc-200");
+  }
+});
+
+// mobile nav scroll script
+const mobileHeader = document.getElementById("mobileHeader");
+const mobileMenu = document.getElementById("mobileMenu");
+const hamburger = document.getElementById("hamburger");
+
+let mobileMenuOpen = false;
+
+function updateMobileHeader() {
+  const isScrolled = window.scrollY > 50;
+
+  mobileHeader.classList.remove(
+    "bg-white/10",
+    "backdrop-blur-md",
+    "border-b",
+    "bg-white",
+    "border-zinc-200"
+  );
+
+  if (mobileMenuOpen) {
+    // Solid header while the menu is open
+    mobileHeader.classList.add("bg-white", "border-b", "border-zinc-200");
+  } else if (isScrolled) {
+    // Translucent, blurred header while scrolling
+    mobileHeader.classList.add(
+      "bg-white/10",
+      "backdrop-blur-md",
+    );
+  }
+
+  // Dark hamburger lines on a white header;
+  // white lines over the hero when at the top.
+  const lineColor = mobileMenuOpen ? "bg-zinc-800" : "bg-zinc-100";
+
+  ["bar1", "bar2", "bar3"].forEach((id) => {
+    const line = document.getElementById(id);
+    line.classList.remove("bg-zinc-100", "bg-zinc-800");
+    line.classList.add(lineColor);
+  });
+}
+
+function toggleMenu() {
+  mobileMenuOpen = !mobileMenuOpen;
+
+  mobileMenu.classList.toggle("hidden", !mobileMenuOpen);
+  mobileMenu.classList.toggle("flex", mobileMenuOpen);
+
+  hamburger.setAttribute("aria-expanded", String(mobileMenuOpen));
+
+  updateMobileHeader();
+}
+
+window.addEventListener("scroll", updateMobileHeader, { passive: true });
+
+updateMobileHeader();
+
     let menuOpen = false;
     function toggleMenu() {
         menuOpen = !menuOpen;
@@ -162,5 +272,5 @@ function populateGameList(container, isClone = false) {
   });
 }
 
-populateGameList(gameList);
-populateGameList(gameListClone, true);
+if (gameList) populateGameList(gameList);
+if (gameListClone) populateGameList(gameListClone, true);

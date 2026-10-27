@@ -11,7 +11,8 @@
     width: 60px;
     height: 60px;
     border-radius: 50%;
-    background: linear-gradient(135deg, #7c3aed 0%, #4f46e5 50%, #2563eb 100%);
+    background: linear-gradient(135deg, #4b5563  0%, #3b82f6 50%, #22d3ee    100%);
+    
     color: #ffffff;
     display: flex;
     align-items: center;
@@ -136,7 +137,7 @@
 .shans-bot-avatar {
     width: 42px;
     height: 42px;
-    background: linear-gradient(135deg, #7c3aed 0%, #4f46e5 100%);
+    background: linear-gradient(135deg, #4b5563  0%, #3b82f6 50%, #22d3ee    100%);
     border-radius: 12px;
     display: flex;
     align-items: center;
@@ -267,12 +268,12 @@
 }
 
 .chat-message.bot .chat-avatar {
-    background: linear-gradient(135deg, #7c3aed 0%, #4f46e5 100%);
+    background: linear-gradient(135deg, #4b5563  0%, #3b82f6 50%, #22d3ee    100%);
     color: white;
 }
 
 .chat-message.user .chat-avatar {
-    background: linear-gradient(135deg, #06b6d4 0%, #0284c7 100%);
+    background: linear-gradient(135deg, #facc15 0%, #f97316 0%,#ca8a04 100%);
     color: white;
 }
 
