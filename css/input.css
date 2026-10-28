@@ -204,3 +204,44 @@ body {
   opacity: 0.85;
   flex-shrink: 0;
 }
+
+
+/* Dynamic Mobile Viewport Height handling (supports browser UI / search bar & tabs bar shown or hidden) */
+#priceModalOverlay {
+  min-height: 100vh;
+  min-height: 100svh;
+  min-height: 100dvh;
+}
+
+.price-modal-card {
+  max-height: calc(100vh - 1.5rem) !important;
+  max-height: calc(100svh - 1.25rem - env(safe-area-inset-top, 0px) - env(safe-area-inset-bottom, 0px)) !important;
+  max-height: calc(100dvh - 1.25rem - env(safe-area-inset-top, 0px) - env(safe-area-inset-bottom, 0px)) !important;
+}
+
+@media (min-width: 768px) {
+  .price-modal-card {
+    max-height: 88vh !important;
+    max-height: 88svh !important;
+    max-height: 88dvh !important;
+  }
+}
+
+/* Price List image card container max-height on mobile */
+.price-image-container {
+  max-height: 42svh;
+  max-height: 42dvh;
+}
+
+@media (min-width: 768px) {
+  .price-image-container {
+    max-height: none;
+  }
+}
+
+/* Lightbox full-size image fit */
+.lightbox-img-fit {
+  max-height: calc(100vh - 2rem) !important;
+  max-height: calc(100svh - 2rem - env(safe-area-inset-top, 0px) - env(safe-area-inset-bottom, 0px)) !important;
+  max-height: calc(100dvh - 2rem - env(safe-area-inset-top, 0px) - env(safe-area-inset-bottom, 0px)) !important;
+}
