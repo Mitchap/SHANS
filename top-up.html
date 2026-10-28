@@ -4,249 +4,624 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./css/output.css" />
+    <link rel="stylesheet" href="./css/chatbot.css" />
+    <link rel="stylesheet" href="./css/loader.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
     />
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <link rel="stylesheet" href="./css/chatbot.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
     <title>SHAN'S | Top-Up</title>
   </head>
-  <body class="overflow-x-hidden h-dvh min-h-screen flex flex-col" >
-<div class="hero-background">
-    <div class="background-fade"></div>
-    <nav
-      class="text-neutral-100 px-6 md:px-12 lg:px-24 xl:px-40 py-4 flex items-center justify-center relative"
-    >
-<!-- Desktop Nav Items -->
-<div
-  id="desktopNav"
-  class="hidden md:flex fixed top-2 left-1/2 -translate-x-1/2 z-99
-         items-center bg-zinc-50 border border-zinc-200
-         rounded-full px-1 py-1 gap-2
-         transition-all duration-300 ease-in-out"
->
-        <a
-          href="index.html"
-          class="px-4 py-1.5 rounded-full text-sm transition-colors text-zinc-500 hover:text-zinc-400"
-          >Home</a
-        >
-        <a
-          href="#"
-          class="px-4 py-1.5 rounded-full text-sm transition-colors bg-white border border-zinc-200 font-medium text-zinc-800 hover:text-zinc-600"
-
-          >Top-Up</a
-        >
-
-        <a
-          href="#"
-          class="px-4 py-1.5 rounded-full text-sm transition-colors text-zinc-500 hover:text-zinc-400"
-          >Reviews</a
-        >
-        <a
-          href="#"
-          class="px-4 py-1.5 rounded-full text-sm transition-colors text-zinc-500 hover:text-zinc-400"
-          >About</a
-        >
+  <body class="overflow-x-hidden min-h-screen flex flex-col">
+    <!-- loading anim -->
+    <div class="preloader flex flex-col items-center justify-center">
+      <div id="loader" class="loader"></div>
+      <div class="mt-4">
+        <p class="text-center font-montserrat text-md lg:text-lg font-medium text-amber-300">
+          Shan's cooking for you ...
+        </p>
       </div>
-
-      <!-- Mobile Hamburger -->
-<!-- Mobile Header -->
-<div
-  id="mobileHeader"
-  class="md:hidden fixed top-0 left-0 w-full z-99 flex justify-end
-         px-6 py-5 transition-all duration-300"
->
-  <button
-    id="hamburger"
-    onclick="toggleMenu()"
-    aria-label="Toggle navigation"
-    aria-expanded="false"
-    aria-controls="mobileMenu"
-    class="flex flex-col gap-1.5 cursor-pointer bg-transparent border-0 p-1"
-  >
-    <span
-      id="bar1"
-      class="block w-6 h-0.5 bg-zinc-100 transition-all duration-300"
-    ></span>
-    <span
-      id="bar2"
-      class="block w-6 h-0.5 bg-zinc-100 transition-all duration-300"
-    ></span>
-    <span
-      id="bar3"
-      class="block w-6 h-0.5 bg-zinc-100 transition-all duration-300"
-    ></span>
-  </button>
-</div>
-
-<!-- Mobile Menu -->
-<div
-  id="mobileMenu"
-  class="hidden fixed top-17 left-0 w-full bg-white
-         border-t border-zinc-200 flex-col p-5 gap-1
-         md:hidden z-98"
->
-  <a
-    href="index.html"
-    class="block px-4 py-2.5 rounded-lg text-sm bg-zinc-50 font-medium text-zinc-800"
-  >Home</a>
-
-  <a
-    href="#"
-    class="block px-4 py-2.5 rounded-lg text-sm text-zinc-500 hover:bg-zinc-50"
-  >Top-Up</a>
-
-  <a
-    href="#"
-    class="block px-4 py-2.5 rounded-lg text-sm text-zinc-500 hover:bg-zinc-50"
-  >Reviews</a>
-
-  <a
-    href="#"
-    class="block px-4 py-2.5 rounded-lg text-sm text-zinc-500 hover:bg-zinc-50"
-  >About</a>
-</div>
-    </nav>
-</div>
-
-<main class="flex-1 mt-6 md:mt-10">
-<section class="flex flex-col items-center justify-center 
-         px-4 pb-16">
-
-      
-
-    <div class="max-w-275 w-full mx-auto border-b border-neutral-400
-            flex flex-col md:flex-row items-start justify-between pb-6">
-       
-        <div class="flex flex-col items-start">
-            <h1 class="text-2xl md:text-4xl font-anton font-medium text-neutral-200 mt-5">Top Up <span class="text-yellow-500">Fun!</span></h1>
-            <p class="text-sm text-neutral-400 mt-2 max-w-sm">Choose from our supported games to top up.</p>
-        </div>
-
-        <div class="flex items-center text-sm mt-14 md:mt-0 gap-2 border border-gray-400 focus-within:border-purple-400 px-3.5 py-1 rounded-full w-full md:w-80 bg-black/20 backdrop-blur-xs transition">
-            <input 
-                id="gameSearchInput" 
-                class="py-1 w-full outline-none placeholder-gray-400 text-neutral-100 bg-transparent text-sm" 
-                type="text" 
-                placeholder="Search games, currencies..." 
-                autocomplete="off"
-            />
-            <button 
-                id="clearSearchBtn" 
-                type="button" 
-                class="hidden text-neutral-400 hover:text-white p-1 transition cursor-pointer" 
-                aria-label="Clear search"
-                title="Clear search"
-            >
-                <i class="fa-solid fa-xmark text-sm"></i>
-            </button>
-            <svg class="shrink-0" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M10.836 10.615 15 14.695" stroke="#7A7B7D" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
-                <path clip-rule="evenodd" d="M9.141 11.738c2.729-1.136 4.001-4.224 2.841-6.898S7.67.921 4.942 2.057C2.211 3.193.94 6.281 2.1 8.955s4.312 3.92 7.041 2.783" stroke="#7A7B7D" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-        </div>
-      </div>
-
-      <div id="categoryFilters" class="flex flex-row justify-start max-w-275 w-full mx-auto mt-4 gap-2 md:gap-4 overflow-x-auto pb-1">
-          <button type="button" data-category="all" class="category-filter-btn px-4 md:px-6 py-1.5 md:py-2 active:scale-95 transition-all text-sm md:text-[15px] rounded-full cursor-pointer whitespace-nowrap shrink-0 bg-purple-800 text-white font-medium shadow-md" aria-pressed="true">All</button>
-          <button type="button" data-category="MOBA & Strategy" class="category-filter-btn px-4 md:px-6 py-1.5 md:py-2 active:scale-95 transition-all text-sm md:text-[15px] rounded-full cursor-pointer whitespace-nowrap shrink-0 bg-slate-700 text-neutral-200 hover:bg-slate-600" aria-pressed="false">
-              <span class="inline md:hidden">MOBA</span><span class="hidden md:inline">MOBA & Strategy</span>
-          </button>
-          <button type="button" data-category="FPS & Shooter" class="category-filter-btn px-4 md:px-6 py-1.5 md:py-2 active:scale-95 transition-all text-sm md:text-[15px] rounded-full cursor-pointer whitespace-nowrap shrink-0 bg-slate-700 text-neutral-200 hover:bg-slate-600" aria-pressed="false">
-              <span class="inline md:hidden">FPS</span><span class="hidden md:inline">FPS & Shooter</span>
-          </button>
-          <button type="button" data-category="RPG & Adventure" class="category-filter-btn px-4 md:px-6 py-1.5 md:py-2 active:scale-95 transition-all text-sm md:text-[15px] rounded-full cursor-pointer whitespace-nowrap shrink-0 bg-slate-700 text-neutral-200 hover:bg-slate-600" aria-pressed="false">
-              <span class="inline md:hidden">RPG</span><span class="hidden md:inline">RPG & Adventure</span>
-          </button>
-      </div>
-    </section>
-
-    <!-- Dynamic game cards container -->
-    <div id="gamesContainer" class="w-full">
-        <!-- Live search and filtered games rendered by script/top-up.js -->
     </div>
-  </main>
+    <!-- end of loading anim -->
 
-     <footer class="mt-auto flex flex-wrap justify-center lg:justify-between overflow-hidden gap-10 md:gap-20 py-16 px-6 md:px-16 lg:px-24 xl:px-32 text-[13px] text-gray-500 bg-black">
+    <div class="hero-background">
+      <div class="background-fade"></div>
+      <nav
+        class="text-neutral-100 px-6 md:px-12 lg:px-24 xl:px-40 py-4 flex items-center justify-center relative"
+      >
+        <!-- Desktop Nav Items -->
+        <div
+          id="desktopNav"
+          class="hidden md:flex fixed top-2 left-1/2 -translate-x-1/2 z-99
+                 items-center bg-zinc-50 border border-zinc-200
+                 rounded-full px-1 py-1 gap-2
+                 transition-all duration-300 ease-in-out"
+        >
+          <a
+            href="index.html"
+            class="px-4 py-1.5 rounded-full text-sm transition-colors text-zinc-500 hover:text-zinc-400"
+            >Home</a
+          >
+          <a
+            href="#"
+            class="px-4 py-1.5 rounded-full text-sm transition-colors bg-white border border-zinc-200 font-medium text-zinc-800 hover:text-zinc-600"
+            >Top-Up</a
+          >
+          <a
+            href="#"
+            class="px-4 py-1.5 rounded-full text-sm transition-colors text-zinc-500 hover:text-zinc-400"
+            >Reviews</a
+          >
+          <a
+            href="#"
+            class="px-4 py-1.5 rounded-full text-sm transition-colors text-zinc-500 hover:text-zinc-400"
+            >About</a
+          >
+        </div>
+
+        <!-- Mobile Header -->
+        <div
+          id="mobileHeader"
+          class="md:hidden fixed top-0 left-0 w-full z-99 flex justify-end
+                 px-6 py-5 transition-all duration-300"
+        >
+          <button
+            id="hamburger"
+            onclick="toggleMenu()"
+            aria-label="Toggle navigation"
+            aria-expanded="false"
+            aria-controls="mobileMenu"
+            class="flex flex-col gap-1.5 cursor-pointer bg-transparent border-0 p-1"
+          >
+            <span
+              id="bar1"
+              class="block w-6 h-0.5 bg-zinc-100 transition-all duration-300"
+            ></span>
+            <span
+              id="bar2"
+              class="block w-6 h-0.5 bg-zinc-100 transition-all duration-300"
+            ></span>
+            <span
+              id="bar3"
+              class="block w-6 h-0.5 bg-zinc-100 transition-all duration-300"
+            ></span>
+          </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div
+          id="mobileMenu"
+          class="hidden fixed top-17 left-0 w-full bg-white
+                 border-t border-zinc-200 flex-col p-5 gap-1
+                 md:hidden z-98"
+        >
+          <a
+            href="index.html"
+            class="block px-4 py-2.5 rounded-lg text-sm font-medium text-zinc-800"
+            >Home</a
+          >
+          <a
+            href="#"
+            class="block px-4 py-2.5 rounded-lg text-sm text-zinc-500 hover:bg-zinc-50 bg-zinc-100"
+            >Top-Up</a
+          >
+          <a
+            href="#"
+            class="block px-4 py-2.5 rounded-lg text-sm text-zinc-500 hover:bg-zinc-50"
+            >Reviews</a
+          >
+          <a
+            href="#"
+            class="block px-4 py-2.5 rounded-lg text-sm text-zinc-500 hover:bg-zinc-50"
+            >About</a
+          >
+        </div>
+      </nav>
+    </div>
+
+    <main class="flex-1 mt-6 md:mt-10">
+      <section class="flex flex-col items-center justify-center px-4 pb-16">
+        <div
+          class="max-w-275 w-full mx-auto border-b border-neutral-400
+                 flex flex-col md:flex-row items-start justify-between pb-6"
+        >
+          <div class="flex flex-col items-start">
+            <h1 class="text-2xl md:text-4xl font-anton font-medium text-neutral-200 mt-5">
+              Top Up <span class="text-yellow-500">Fun!</span>
+            </h1>
+            <p class="text-sm text-neutral-400 mt-2 max-w-sm">
+              Choose from our supported games to view price lists and top up directly.
+            </p>
+          </div>
+
+          <div
+            class="flex items-center text-sm mt-14 md:mt-0 gap-2 border border-gray-400 focus-within:border-purple-400 px-3.5 py-1 rounded-full w-full md:w-80 bg-black/20 backdrop-blur-xs transition"
+          >
+            <input
+              id="gameSearchInput"
+              class="py-1 w-full outline-none placeholder-gray-400 text-neutral-100 bg-transparent text-sm"
+              type="text"
+              placeholder="Search games, currencies..."
+              autocomplete="off"
+            />
+            <button
+              id="clearSearchBtn"
+              type="button"
+              class="hidden text-neutral-400 hover:text-white p-1 transition cursor-pointer"
+              aria-label="Clear search"
+              title="Clear search"
+            >
+              <i class="fa-solid fa-xmark text-sm"></i>
+            </button>
+            <svg
+              class="shrink-0"
+              width="16"
+              height="16"
+              viewBox="0 0 16 16"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M10.836 10.615 15 14.695"
+                stroke="#7A7B7D"
+                stroke-width="1.2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                clip-rule="evenodd"
+                d="M9.141 11.738c2.729-1.136 4.001-4.224 2.841-6.898S7.67.921 4.942 2.057C2.211 3.193.94 6.281 2.1 8.955s4.312 3.92 7.041 2.783"
+                stroke="#7A7B7D"
+                stroke-width="1.2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </div>
+        </div>
+
+        <div
+          id="categoryFilters"
+          class="flex flex-row justify-start max-w-275 w-full mx-auto mt-4 gap-2 md:gap-4 overflow-x-auto pb-1"
+        >
+          <button
+            type="button"
+            data-category="all"
+            class="category-filter-btn px-4 md:px-6 py-1.5 md:py-2 active:scale-95 transition-all text-sm md:text-[15px] rounded-full cursor-pointer whitespace-nowrap shrink-0 bg-purple-800 text-white font-medium shadow-md"
+            aria-pressed="true"
+          >
+            All
+          </button>
+          <button
+            type="button"
+            data-category="MOBA & Strategy"
+            class="category-filter-btn px-4 md:px-6 py-1.5 md:py-2 active:scale-95 transition-all text-sm md:text-[15px] rounded-full cursor-pointer whitespace-nowrap shrink-0 bg-slate-700 text-neutral-200 hover:bg-slate-600"
+            aria-pressed="false"
+          >
+            <span class="inline md:hidden">MOBA</span><span class="hidden md:inline">MOBA & Strategy</span>
+          </button>
+          <button
+            type="button"
+            data-category="FPS & Shooter"
+            class="category-filter-btn px-4 md:px-6 py-1.5 md:py-2 active:scale-95 transition-all text-sm md:text-[15px] rounded-full cursor-pointer whitespace-nowrap shrink-0 bg-slate-700 text-neutral-200 hover:bg-slate-600"
+            aria-pressed="false"
+          >
+            <span class="inline md:hidden">FPS</span><span class="hidden md:inline">FPS & Shooter</span>
+          </button>
+          <button
+            type="button"
+            data-category="RPG & Adventure"
+            class="category-filter-btn px-4 md:px-6 py-1.5 md:py-2 active:scale-95 transition-all text-sm md:text-[15px] rounded-full cursor-pointer whitespace-nowrap shrink-0 bg-slate-700 text-neutral-200 hover:bg-slate-600"
+            aria-pressed="false"
+          >
+            <span class="inline md:hidden">RPG</span><span class="hidden md:inline">RPG & Adventure</span>
+          </button>
+        </div>
+      </section>
+
+      <!-- Dynamic game cards container -->
+      <div id="gamesContainer" class="w-full">
+        <!-- Live search and filtered games rendered by script/top-up.js -->
+      </div>
+    </main>
+
+    <!-- Dynamic Game Top-Up & 1080x1080 Price List Modal -->
+    <div
+      id="priceModalOverlay"
+      class="fixed inset-0 z-100 flex items-center justify-center p-3 sm:p-4 md:p-6 bg-black/80 backdrop-blur-md opacity-0 pointer-events-none transition-all duration-300"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="modalGameTitle"
+      aria-hidden="true"
+    >
+      <div
+        id="priceModalCard"
+        class="relative w-full max-w-lg md:max-w-4xl lg:max-w-5xl max-h-[92vh] md:max-h-[88vh] bg-neutral-900 border border-neutral-700/80 rounded-2xl md:rounded-3xl shadow-2xl overflow-hidden flex flex-col text-neutral-100 transition-all duration-300 transform scale-95"
+      >
+        <!-- Modal Header -->
+        <div
+          class="flex items-center justify-between px-4 sm:px-6 py-3.5 sm:py-4 border-b border-neutral-800 bg-neutral-950/80 backdrop-blur-xs shrink-0"
+        >
+          <div class="flex items-center gap-3 min-w-0 pr-2">
+            <div
+              id="modalGameThumb"
+              class="w-10 h-10 sm:w-11 sm:h-11 rounded-xl overflow-hidden shrink-0 border border-neutral-700/60 bg-neutral-800 flex items-center justify-center shadow-inner"
+            >
+              <img id="modalGameThumbImg" src="" alt="" class="w-full h-full object-cover" />
+            </div>
+            <div class="min-w-0">
+              <div class="flex items-center gap-2 flex-wrap">
+                <h2
+                  id="modalGameTitle"
+                  class="text-base sm:text-lg md:text-xl font-bold font-montserrat text-neutral-100 truncate"
+                >
+                  Game Title
+                </h2>
+                <span
+                  id="modalGameCategory"
+                  class="text-[10px] sm:text-xs font-medium px-2.5 py-0.5 rounded-full bg-purple-900/60 text-purple-300 border border-purple-700/50 shrink-0"
+                  >Category</span
+                >
+              </div>
+              <p id="modalGameCurrenciesSub" class="text-xs text-neutral-400 truncate">Currencies</p>
+            </div>
+          </div>
+          <button
+            id="closeModalBtn"
+            type="button"
+            class="w-9 h-9 rounded-full bg-neutral-800 hover:bg-neutral-700 text-neutral-300 hover:text-white flex items-center justify-center transition-colors cursor-pointer shrink-0 border border-neutral-700/50 focus:outline-none focus:ring-2 focus:ring-purple-500"
+            aria-label="Close modal"
+          >
+            <i class="fa-solid fa-xmark text-lg"></i>
+          </button>
+        </div>
+
+        <!-- Modal Scrollable Body -->
+        <div class="flex-1 overflow-y-auto p-4 sm:p-6 custom-modal-scroll">
+          <div class="grid grid-cols-1 md:grid-cols-12 gap-5 md:gap-7 lg:gap-8 items-start">
+            <!-- Left Column: 1080x1080 Price List Image Showcase -->
+            <div class="md:col-span-6 lg:col-span-7 flex flex-col items-center">
+              <div
+                class="relative w-full max-w-[380px] sm:max-w-[440px] md:max-w-none aspect-square rounded-2xl overflow-hidden bg-neutral-950 border border-neutral-800 shadow-xl group flex items-center justify-center"
+              >
+
+                <!-- Enlarge Fullscreen Button -->
+                <button
+                  id="modalExpandImageBtn"
+                  type="button"
+                  class="absolute bottom-3 right-3 z-10 px-3 py-1.5 rounded-lg bg-black/80 hover:bg-black text-xs text-white border border-white/20 backdrop-blur-xs flex items-center gap-1.5 transition-all cursor-pointer shadow-md hover:scale-105 active:scale-95"
+                  title="View full resolution price list"
+                >
+                  <i class="fa-solid fa-up-right-and-down-left-from-center text-[10px]"></i>
+                  <span>Tap to Enlarge</span>
+                </button>
+
+                <!-- Loading spinner -->
+                <div
+                  id="modalImageLoader"
+                  class="absolute inset-0 flex items-center justify-center bg-neutral-950"
+                >
+                  <div class="w-8 h-8 border-2 border-purple-500 border-t-transparent rounded-full animate-spin"></div>
+                </div>
+
+                <!-- 1080x1080 Price List Image -->
+                <img
+                  id="modalPriceImage"
+                  class="w-full h-full object-contain cursor-zoom-in transition-transform duration-300 group-hover:scale-[1.02]"
+                  src=""
+                  alt="Game Price List"
+                />
+              </div>
+
+              <div class="mt-2.5 flex items-center justify-center gap-2 text-[11px] text-neutral-400 text-center">
+                <i class="fa-solid fa-magnifying-glass-plus text-purple-400"></i>
+                <span>Click price sheet or "Tap to Enlarge" for high-resolution zoom</span>
+              </div>
+            </div>
+
+            <!-- Right Column: Game Details, How to Order & Messenger CTA -->
+            <div class="md:col-span-6 lg:col-span-5 flex flex-col gap-3.5 sm:gap-4">
+              <!-- Supported Currencies -->
+              <div class="bg-neutral-800/40 rounded-xl p-3.5 border border-neutral-700/50">
+                <div class="text-[11px] text-neutral-400 uppercase tracking-wider font-semibold mb-2 flex items-center gap-1.5">
+                  <i class="fa-solid fa-coins text-yellow-400 text-xs"></i>
+                  <span>Available Currencies</span>
+                </div>
+                <div id="modalCurrenciesTags" class="flex flex-wrap gap-1.5">
+                  <!-- Badges populated by JS -->
+                </div>
+              </div>
+
+              <!-- Quick 3-Step Ordering Guide -->
+              <div class="bg-neutral-800/40 rounded-xl p-3.5 border border-neutral-700/50">
+                <div class="text-[11px] text-neutral-400 uppercase tracking-wider font-semibold mb-2 flex items-center gap-1.5">
+                  <i class="fa-solid fa-list-check text-purple-400 text-xs"></i>
+                  <span>How to Order via Messenger</span>
+                </div>
+                <ol class="space-y-2 text-xs text-neutral-300">
+                  <li class="flex items-start gap-2">
+                    <span class="w-4.5 h-4.5 rounded-full bg-purple-900/80 text-purple-300 border border-purple-600/40 text-[10px] font-bold flex items-center justify-center shrink-0 mt-0.5">1</span>
+                    <span>Pick your desired package from the price sheet on the left.</span>
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <span class="w-4.5 h-4.5 rounded-full bg-purple-900/80 text-purple-300 border border-purple-600/40 text-[10px] font-bold flex items-center justify-center shrink-0 mt-0.5">2</span>
+                    <span>Click <strong>Order via Messenger</strong> below to initiate the chat.</span>
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <span class="w-4.5 h-4.5 rounded-full bg-purple-900/80 text-purple-300 border border-purple-600/40 text-[10px] font-bold flex items-center justify-center shrink-0 mt-0.5">3</span>
+                    <span>Send your Game ID / Server and GCash payment receipt to complete.</span>
+                  </li>
+                </ol>
+              </div>
+
+              <!-- Prewritten Message Preview & Customization -->
+              <div class="bg-neutral-800/40 rounded-xl p-3.5 border border-neutral-700/50">
+                <div class="flex items-center justify-between text-xs mb-1.5">
+                  <span class="text-neutral-300 font-semibold flex items-center gap-1.5">
+                    <i class="fa-brands fa-facebook-messenger text-blue-400"></i>
+                    <span>Prewritten Messenger Order:</span>
+                  </span>
+                  <button
+                    id="modalCopyMessageBtn"
+                    type="button"
+                    class="text-xs text-purple-400 hover:text-purple-300 font-medium transition cursor-pointer flex items-center gap-1"
+                    title="Copy message to clipboard"
+                  >
+                    <i class="fa-regular fa-copy"></i>
+                    <span id="copyBtnLabel">Copy</span>
+                  </button>
+                </div>
+                <textarea
+                  id="modalPrewrittenInput"
+                  rows="3"
+                  class="w-full text-xs bg-neutral-950/70 border border-neutral-700/70 rounded-lg p-2.5 text-neutral-200 resize-none focus:outline-none focus:border-purple-500 transition leading-relaxed font-sans"
+                  placeholder="Prewritten message waiting to be sent..."
+                ></textarea>
+                <p class="text-[10px] text-neutral-400 mt-1">
+                  This text is pre-filled in your Messenger input box waiting for you to send.
+                </p>
+              </div>
+
+              <!-- Messenger Order CTA Button -->
+              <div class="mt-1 flex flex-col gap-2">
+                <a
+                  id="modalMessengerCTA"
+                  href="#"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="chat-option-btn chat-action-link modal-messenger-live-btn"
+                  title="Opens Facebook Messenger in a new tab"
+                >
+                  <span class="option-icon">
+                    <i class="fa-brands fa-facebook-messenger" style="color: #60a5fa;"></i>
+                  </span>
+                  <span class="option-text">Order via Messenger</span>
+                  <span class="option-external-icon">
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                  </span>
+                </a>
+
+                <div class="flex items-center justify-center gap-3 text-[11px] text-neutral-400">
+                  <span class="flex items-center gap-1"><i class="fa-solid fa-bolt text-yellow-400"></i> Fast Delivery</span>
+                  <span>•</span>
+                  <span class="flex items-center gap-1"><i class="fa-solid fa-shield-halved text-emerald-400"></i> 100% Legit</span>
+                  <span>•</span>
+                  <span class="flex items-center gap-1"><i class="fa-solid fa-clock text-blue-400"></i> Live Agent</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Fullscreen Lightbox for 1080x1080 Price List -->
+    <div
+      id="priceImageLightbox"
+      class="fixed inset-0 z-150 flex items-center justify-center p-2 sm:p-4 bg-black/95 backdrop-blur-md opacity-0 pointer-events-none transition-all duration-300"
+      role="dialog"
+      aria-label="High resolution price list full view"
+      aria-hidden="true"
+    >
+      <button
+        id="closeLightboxBtn"
+        type="button"
+        class="fixed top-4 right-4 z-160 w-11 h-11 rounded-full bg-neutral-800/90 hover:bg-neutral-700 text-white flex items-center justify-center transition cursor-pointer border border-neutral-600 shadow-xl"
+        aria-label="Close full view"
+      >
+        <i class="fa-solid fa-xmark text-xl"></i>
+      </button>
+
+      <div class="relative max-w-full max-h-full flex items-center justify-center p-2">
+        <img
+          id="lightboxImage"
+          src=""
+          alt="Full size price list"
+          class="max-w-[94vw] max-h-[92vh] object-contain rounded-lg shadow-2xl transition-transform duration-200"
+        />
+      </div>
+    </div>
+
+    <footer
+      class="mt-auto flex flex-wrap justify-center lg:justify-between overflow-hidden gap-10 md:gap-20 py-16 px-6 md:px-16 lg:px-24 xl:px-32 text-[13px] text-gray-500 bg-black"
+    >
       <div class="flex flex-wrap items-start gap-10 md:gap-15 xl:gap-35">
         <a href="https://prebuiltui.com">
-            <svg width="31" height="34" viewBox="0 0 31 34" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="m8.75 5.3 6.75 3.884 6.75-3.885M8.75 28.58v-7.755L2 16.939m27 0-6.75 3.885v7.754M2.405 9.408 15.5 16.954l13.095-7.546M15.5 32V16.939M29 22.915V10.962a2.98 2.98 0 0 0-1.5-2.585L17 2.4a3.01 3.01 0 0 0-3 0L3.5 8.377A3 3 0 0 0 2 10.962v11.953A2.98 2.98 0 0 0 3.5 25.5L14 31.477a3.01 3.01 0 0 0 3 0L27.5 25.5a3 3 0 0 0 1.5-2.585" stroke="url(#a)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-                <defs>
-                    <linearGradient id="a" x1="15.5" y1="2" x2="15.5" y2="32" gradientUnits="userSpaceOnUse">
-                    <stop stop-color="#F8FAFC"/>
-                    <stop offset="1" stop-color="#383838"/>
-                    </linearGradient>
-                </defs>
-            </svg>
+          <svg
+            width="31"
+            height="34"
+            viewBox="0 0 31 34"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="m8.75 5.3 6.75 3.884 6.75-3.885M8.75 28.58v-7.755L2 16.939m27 0-6.75 3.885v7.754M2.405 9.408 15.5 16.954l13.095-7.546M15.5 32V16.939M29 22.915V10.962a2.98 2.98 0 0 0-1.5-2.585L17 2.4a3.01 3.01 0 0 0-3 0L3.5 8.377A3 3 0 0 0 2 10.962v11.953A2.98 2.98 0 0 0 3.5 25.5L14 31.477a3.01 3.01 0 0 0 3 0L27.5 25.5a3 3 0 0 0 1.5-2.585"
+              stroke="url(#a)"
+              stroke-width="2.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <defs>
+              <linearGradient
+                id="a"
+                x1="15.5"
+                y1="2"
+                x2="15.5"
+                y2="32"
+                gradientUnits="userSpaceOnUse"
+              >
+                <stop stop-color="#F8FAFC" />
+                <stop offset="1" stop-color="#383838" />
+              </linearGradient>
+            </defs>
+          </svg>
         </a>
         <div>
-            <p class="text-slate-100 font-semibold">Product</p>
-            <ul class="mt-2 space-y-2">
-                <li><a href="/" class="hover:text-indigo-600 transition">Home</a></li>
-                <li><a href="#" onclick="event.preventDefault(); if (window.ShansChatbot) window.ShansChatbot.open();" class="hover:text-indigo-600 transition">Support (AI Chat)</a></li>
-                <li><a href="/" class="hover:text-indigo-600 transition">Pricing</a></li>
-                <li><a href="/" class="hover:text-indigo-600 transition">Affiliate</a></li>
-            </ul>
+          <p class="text-slate-100 font-semibold">Product</p>
+          <ul class="mt-2 space-y-2">
+            <li><a href="/" class="hover:text-indigo-600 transition">Home</a></li>
+            <li>
+              <a
+                href="#"
+                onclick="event.preventDefault(); if (window.ShansChatbot) window.ShansChatbot.open();"
+                class="hover:text-indigo-600 transition"
+                >Support (AI Chat)</a
+              >
+            </li>
+            <li><a href="/" class="hover:text-indigo-600 transition">Pricing</a></li>
+            <li><a href="/" class="hover:text-indigo-600 transition">Affiliate</a></li>
+          </ul>
         </div>
         <div>
-            <p class="text-slate-100 font-semibold">Resources</p>
-            <ul class="mt-2 space-y-2">
-                <li><a href="/" class="hover:text-indigo-600 transition">Company</a></li>
-                <li><a href="/" class="hover:text-indigo-600 transition">Blogs</a></li>
-                <li><a href="/" class="hover:text-indigo-600 transition">Community</a></li>
-                <li><a href="/" class="hover:text-indigo-600 transition">Careers<span class="text-xs text-white bg-indigo-600 rounded-md ml-2 px-2 py-1">We’re hiring!</span></a></li>
-                <li><a href="/" class="hover:text-indigo-600 transition">About</a></li>
-            </ul>
+          <p class="text-slate-100 font-semibold">Resources</p>
+          <ul class="mt-2 space-y-2">
+            <li><a href="/" class="hover:text-indigo-600 transition">Company</a></li>
+            <li><a href="/" class="hover:text-indigo-600 transition">Blogs</a></li>
+            <li><a href="/" class="hover:text-indigo-600 transition">Community</a></li>
+            <li>
+              <a href="/" class="hover:text-indigo-600 transition"
+                >Careers<span
+                  class="text-xs text-white bg-indigo-600 rounded-md ml-2 px-2 py-1"
+                  >We’re hiring!</span
+                ></a
+              >
+            </li>
+            <li><a href="/" class="hover:text-indigo-600 transition">About</a></li>
+          </ul>
         </div>
         <div>
-            <p class="text-slate-100 font-semibold">Legal</p>
-            <ul class="mt-2 space-y-2">
-                <li><a href="/" class="hover:text-indigo-600 transition">Privacy</a></li>
-                <li><a href="/" class="hover:text-indigo-600 transition">Terms</a></li>
-            </ul>
+          <p class="text-slate-100 font-semibold">Legal</p>
+          <ul class="mt-2 space-y-2">
+            <li><a href="/" class="hover:text-indigo-600 transition">Privacy</a></li>
+            <li><a href="/" class="hover:text-indigo-600 transition">Terms</a></li>
+          </ul>
         </div>
-    </div>
-    <div class="flex flex-col max-md:items-center max-md:text-center gap-2 items-end">
-        <p class="max-w-60">Making every customer feel valued—no matter the size of your audience.</p>
+      </div>
+      <div class="flex flex-col max-md:items-center max-md:text-center gap-2 items-end">
+        <p class="max-w-60">
+          Making every customer feel valued—no matter the size of your audience.
+        </p>
         <div class="flex items-center gap-4 mt-3">
-            <a href="https://dribbble.com/prebuiltui" target="_blank" rel="noreferrer">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-dribbble size-5 hover:text-indigo-500" aria-hidden="true">
-                    <circle cx="12" cy="12" r="10"></circle>
-                    <path d="M19.13 5.09C15.22 9.14 10 10.44 2.25 10.94"></path>
-                    <path d="M21.75 12.84c-6.62-1.41-12.14 1-16.38 6.32"></path>
-                    <path d="M8.56 2.75c4.37 6 6 9.42 8 17.72"></path>
-                </svg>
-            </a>
-            <a href="https://www.linkedin.com/company/prebuiltui" target="_blank" rel="noreferrer">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-linkedin size-5 hover:text-indigo-500" aria-hidden="true">
-                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-                    <rect width="4" height="12" x="2" y="9"></rect>
-                    <circle cx="4" cy="4" r="2"></circle>
-                </svg>
-            </a>
-            <a href="https://x.com/prebuiltui" target="_blank" rel="noreferrer">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-twitter size-5 hover:text-indigo-500" aria-hidden="true">
-                    <path
-                        d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z">
-                    </path>
-                </svg>
-            </a>
-            <a href="https://www.youtube.com/@prebuiltui" target="_blank" rel="noreferrer">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-youtube size-6 hover:text-indigo-500" aria-hidden="true">
-                    <path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17">
-                    </path>
-                    <path d="m10 15 5-3-5-3z"></path>
-                </svg>
-            </a>
+          <a href="https://dribbble.com/prebuiltui" target="_blank" rel="noreferrer">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="lucide lucide-dribbble size-5 hover:text-indigo-500"
+              aria-hidden="true"
+            >
+              <circle cx="12" cy="12" r="10"></circle>
+              <path d="M19.13 5.09C15.22 9.14 10 10.44 2.25 10.94"></path>
+              <path d="M21.75 12.84c-6.62-1.41-12.14 1-16.38 6.32"></path>
+              <path d="M8.56 2.75c4.37 6 6 9.42 8 17.72"></path>
+            </svg>
+          </a>
+          <a
+            href="https://www.linkedin.com/company/prebuiltui"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="lucide lucide-linkedin size-5 hover:text-indigo-500"
+              aria-hidden="true"
+            >
+              <path
+                d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"
+              ></path>
+              <rect width="4" height="12" x="2" y="9"></rect>
+              <circle cx="4" cy="4" r="2"></circle>
+            </svg>
+          </a>
+          <a href="https://x.com/prebuiltui" target="_blank" rel="noreferrer">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="lucide lucide-twitter size-5 hover:text-indigo-500"
+              aria-hidden="true"
+            >
+              <path
+                d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"
+              ></path>
+            </svg>
+          </a>
+          <a href="https://www.youtube.com/@prebuiltui" target="_blank" rel="noreferrer">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="lucide lucide-youtube size-6 hover:text-indigo-500"
+              aria-hidden="true"
+            >
+              <path
+                d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17"
+              ></path>
+              <path d="m10 15 5-3-5-3z"></path>
+            </svg>
+          </a>
         </div>
-        <p class="mt-3 text-center">© 2026 <a href="https://prebuiltui.com">SHAN'S TRADE 'N GAME CREDITS</a></p>
-    </div>
-</footer>
+        <p class="mt-3 text-center">
+          © 2026 <a href="https://prebuiltui.com">SHAN'S TRADE 'N GAME CREDITS</a>
+        </p>
+      </div>
+    </footer>
   </body>
   <script src="script/script.js"></script>
   <script src="script/top-up.js"></script>

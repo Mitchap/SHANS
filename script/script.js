@@ -1,3 +1,31 @@
+// Loading animation script
+window.addEventListener("load", () => {
+  const loader = document.querySelector(".preloader");
+
+  if (!loader) return;
+
+  const removeLoader = () => {
+    loader.remove();
+  };
+
+  loader.addEventListener("transitionend", (event) => {
+    if (
+      event.target === loader &&
+      event.propertyName === "opacity"
+    ) {
+      removeLoader();
+    }
+  });
+
+  loader.classList.add("preloader--hidden");
+
+  // Fallback in case the transition event never fires.
+  setTimeout(removeLoader, 1000);
+});
+
+//end of loading animation script
+
+
 // disable browser scroll restoration
 if ("scrollRestoration" in history) {
   history.scrollRestoration = "manual";

@@ -123,3 +123,84 @@ body {
 }
 
 
+
+
+/* Custom modal scrollbar */
+.custom-modal-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(168, 85, 247, 0.5) rgba(0, 0, 0, 0.2);
+}
+
+.custom-modal-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+
+.custom-modal-scroll::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 9999px;
+}
+
+.custom-modal-scroll::-webkit-scrollbar-thumb {
+  background: rgba(168, 85, 247, 0.5);
+  border-radius: 9999px;
+}
+
+.custom-modal-scroll::-webkit-scrollbar-thumb:hover {
+  background: rgba(168, 85, 247, 0.8);
+}
+
+
+/* Modal CTA Button: Full CSS styling matching Chatbot's Speak to Live Agent */
+.modal-messenger-live-btn {
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  padding: 12px 18px !important;
+  background: linear-gradient(135deg, rgba(0, 132, 255, 0.22) 0%, rgba(124, 58, 237, 0.3) 100%) !important;
+  border: 1.5px solid #60a5fa !important;
+  border-radius: 12px !important;
+  color: #ffffff !important;
+  text-decoration: none !important;
+  font-size: 0.95rem !important;
+  font-weight: 700 !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
+  width: 100% !important;
+  backdrop-filter: blur(4px) !important;
+  box-shadow: 0 4px 14px rgba(0, 132, 255, 0.22) !important;
+  font-family: inherit !important;
+}
+
+.modal-messenger-live-btn:hover {
+  background: #7052A0 !important;
+  border-color: #bfdbfe !important;
+  color: #ffffff !important;
+  transform: translateY(-2px) scale(1.01) !important;
+  box-shadow: 0 6px 20px rgba(0, 132, 255, 0.45) !important;
+}
+
+.modal-messenger-live-btn:active {
+  transform: translateY(0) scale(0.99) !important;
+}
+
+.modal-messenger-live-btn .option-icon {
+  font-size: 1.15rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.modal-messenger-live-btn .option-text {
+  font-weight: 700;
+  color: #ffffff;
+  flex: 1;
+  text-align: left;
+}
+
+.modal-messenger-live-btn .option-external-icon {
+  margin-left: auto;
+  font-size: 0.8rem;
+  opacity: 0.85;
+  flex-shrink: 0;
+}
