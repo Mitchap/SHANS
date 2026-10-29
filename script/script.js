@@ -47,38 +47,10 @@ window.addEventListener("beforeunload", () => {
 // nav script
 const desktopNav = document.getElementById("desktopNav");
 
-function updateNav() {
-  if (window.scrollY > 50) {
-    desktopNav.classList.add(
-      "bg-white/10",
-      "backdrop-blur-md",
-      "border-white/20"
-    );
-
-    desktopNav.classList.remove(
-      "bg-zinc-50",
-      "border-zinc-200"
-    );
-  } else {
-    desktopNav.classList.remove(
-      "bg-white/10",
-      "backdrop-blur-md",
-      "border-white/20"
-    );
-
-    desktopNav.classList.add(
-      "bg-zinc-50",
-      "border-zinc-200"
-    );
-  }
-}
-
-window.addEventListener("scroll", updateNav);
-updateNav();
 
 desktopNav.addEventListener("mouseenter", () => {
   if (window.scrollY > 50) {
-    desktopNav.classList.add("bg-white", "border-zinc-200");
+    desktopNav.classList.add("bg-[#14041b]", "border-zinc-200");
 
     desktopNav.classList.remove(
       "bg-white/10",
@@ -106,7 +78,7 @@ const hamburger = document.getElementById("hamburger");
 let mobileMenuOpen = false;
 
 function updateMobileHeader() {
-  const isScrolled = window.scrollY > 50;
+  const isScrolled = window.scrollY > 20;
 
   mobileHeader.classList.remove(
     "bg-white/10",

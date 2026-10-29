@@ -411,12 +411,12 @@ document.addEventListener("DOMContentLoaded", () => {
       >
         <div class="overflow-hidden rounded-b-[50%_12%] bg-slate-900 relative">
           <img
-            class="w-full h-20 md:h-40 lg:h-52 object-cover object-top transition duration-300 group-hover:scale-105"
+            class=""w-full h-20 md:h-28 lg:h-44 xl:h-52 object-cover object-top transition duration-300 group-hover:scale-105"
             src="${escapeHtml(game.image)}"
             alt="${escapeHtml(game.name)}"
             loading="lazy"
           >
-          <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end justify-center pb-2">
+          <div class="absolute inset-0 bg-linear-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end justify-center pb-2">
             <span class="text-[10px] md:text-xs font-semibold text-white bg-purple-600/90 backdrop-blur-xs px-2.5 py-0.5 rounded-full shadow-xs flex items-center gap-1">
               <i class="fa-solid fa-tags text-[10px]"></i>View Rates
             </span>
@@ -464,7 +464,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const sectionId = getShortCategoryLabel(cat);
 
         categorySectionsHtml.push(`
-          <section id="${escapeHtml(sectionId)}" class="w-full max-w-275 mx-auto px-4 md:px-0 mb-16 md:mb-20 animate__animated animate__fadeIn">
+          <section id="${escapeHtml(sectionId)}" class="w-full max-w-275 mx-auto px-4 lg:px-0 mb-16 md:mb-20 animate__animated animate__fadeIn">
             <div class="flex items-center justify-between mb-5 md:mb-8">
               <h2 class="font-montserrat font-bold text-neutral-300 text-xl md:text-2xl tracking-wider">
                 ${escapeHtml(cat)}

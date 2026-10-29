@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="media/favicon.png">
     <link rel="stylesheet" href="./css/output.css" />
     <link rel="stylesheet" href="./css/chatbot.css" />
     <link rel="stylesheet" href="./css/loader.css" />
@@ -43,41 +44,68 @@
         class="text-neutral-100 px-6 md:px-12 lg:px-24 xl:px-40 py-4 flex items-center justify-center relative"
       >
         <!-- Desktop Nav Items -->
-        <div
-          id="desktopNav"
-          class="hidden md:flex fixed top-2 left-1/2 -translate-x-1/2 z-99
-                 items-center bg-zinc-50 border border-zinc-200
-                 rounded-full px-1 py-1 gap-2
-                 transition-all duration-300 ease-in-out"
+<div
+  id="desktopNav"
+  class="hidden md:flex fixed top-2 left-1/2 -translate-x-1/2 z-99
+         items-center border
+         rounded-full px-1 py-1 gap-2
+         transition-all duration-300 ease-in-out bg-white/10 backdrop-blur-md border-white/20"
+>
+
+  <a
+    href="#"
+    aria-label="Shan's Trade 'N Game Credits - Home"
+    class="flex items-center shrink-0 pl-2 pr-1 me-10"
+  >
+    <img
+      src="media/logo-horizontal.png"
+      alt="Shan's Trade 'N Game Credits"
+      class="h-3 lg:h-6 w-auto object-contain"
+    />
+  </a>
+
+        <a
+          href="index.html"
+          class="px-4 py-1.5 rounded-full text-sm transition-colors text-zinc-500 hover:text-zinc-100"
+          >Home</a
+          >
+          <a
+          href="#"
+          class="px-4 py-1.5 rounded-full text-sm transition-colors bg-white border border-zinc-200 font-medium text-zinc-800 hover:text-zinc-600"
+          >Top-Up</a
         >
-          <a
-            href="index.html"
-            class="px-4 py-1.5 rounded-full text-sm transition-colors text-zinc-500 hover:text-zinc-400"
-            >Home</a
-          >
-          <a
-            href="#"
-            class="px-4 py-1.5 rounded-full text-sm transition-colors bg-white border border-zinc-200 font-medium text-zinc-800 hover:text-zinc-600"
-            >Top-Up</a
-          >
-          <a
-            href="#"
-            class="px-4 py-1.5 rounded-full text-sm transition-colors text-zinc-500 hover:text-zinc-400"
-            >Reviews</a
-          >
-          <a
-            href="#"
-            class="px-4 py-1.5 rounded-full text-sm transition-colors text-zinc-500 hover:text-zinc-400"
-            >About</a
-          >
-        </div>
+
+
+        <a
+          href="#"
+          class="px-4 py-1.5 rounded-full text-sm transition-colors text-zinc-500 hover:text-zinc-100"
+          >Reviews</a
+        >
+        <a
+          href="#"
+          class="px-4 py-1.5 rounded-full text-sm transition-colors text-zinc-500 hover:text-zinc-100"
+          >About</a
+        >
+      </div>
 
         <!-- Mobile Header -->
-        <div
-          id="mobileHeader"
-          class="md:hidden fixed top-0 left-0 w-full z-99 flex justify-end
-                 px-6 py-5 transition-all duration-300"
-        >
+<div
+  id="mobileHeader"
+  class="lg:hidden fixed top-0 left-0 w-full z-99 flex justify-between
+         px-6 py-5 transition-all duration-300"
+>
+  <a
+    href="index.html"
+    aria-label="Shan's Trade 'N Game Credits - Home"
+    class="flex items-center shrink-0 pl-2 pr-1 me-10"
+  >
+    <img
+      src="media/logo-horizontal.png"
+      alt="Shan's Trade 'N Game Credits"
+      class="h-6 w-auto object-contain"
+    />
+  </a>
+        
           <button
             id="hamburger"
             onclick="toggleMenu()"
@@ -233,7 +261,7 @@
       </section>
 
       <!-- Dynamic game cards container -->
-      <div id="gamesContainer" class="w-full">
+      <div id="gamesContainer" class="w-full ">
         <!-- Live search and filtered games rendered by script/top-up.js -->
       </div>
     </main>
@@ -241,7 +269,9 @@
     <!-- Dynamic Game Top-Up & 1080x1080 Price List Modal -->
     <div
       id="priceModalOverlay"
-      class="fixed inset-0 z-100 flex items-center justify-center p-2.5 sm:p-4 md:p-6 bg-black/80 backdrop-blur-md opacity-0 pointer-events-none transition-all duration-300 min-h-screen min-h-svh min-h-dvh"
+      class="fixed inset-0 z-100 flex items-center justify-center 
+      p-2.5 sm:p-4 md:p-6 bg-black/80 backdrop-blur-md opacity-0 
+      pointer-events-none transition-all duration-300 min-h-dvh"
       role="dialog"
       aria-modal="true"
       aria-labelledby="modalGameTitle"
