@@ -57,9 +57,13 @@ body {
 /* divider waves */
 .custom-shape-divider-top-1793800082 {
     position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     overflow: hidden;
     line-height: 0;
+    z-index: 1;
+    pointer-events: none;
 }
 
 .custom-shape-divider-top-1793800082 svg {
@@ -67,6 +71,13 @@ body {
     display: block;
     width: calc(100% + 1.3px);
     height: 137px;
+}
+
+/** For mobile devices **/
+@media (max-width: 767px) {
+    .custom-shape-divider-top-1793800082 svg {
+        height: 70px;
+    }
 }
 
 .custom-shape-divider-top-1793800082 .shape-fill-1 {

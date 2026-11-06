@@ -47,28 +47,21 @@ window.addEventListener("beforeunload", () => {
 // nav script
 const desktopNav = document.getElementById("desktopNav");
 
+if (desktopNav) {
+  desktopNav.addEventListener("mouseenter", () => {
+    if (window.scrollY > 50) {
+      desktopNav.classList.add("bg-[#14041b]", "border-zinc-200");
+      desktopNav.classList.remove("bg-white/10", "border-white/20");
+    }
+  });
 
-desktopNav.addEventListener("mouseenter", () => {
-  if (window.scrollY > 50) {
-    desktopNav.classList.add("bg-[#14041b]", "border-zinc-200");
-
-    desktopNav.classList.remove(
-      "bg-white/10",
-      "border-white/20"
-    );
-  }
-});
-
-desktopNav.addEventListener("mouseleave", () => {
-  if (window.scrollY > 50) {
-    desktopNav.classList.add(
-      "bg-white/10",
-      "border-white/20"
-    );
-
-    desktopNav.classList.remove("bg-white", "border-zinc-200");
-  }
-});
+  desktopNav.addEventListener("mouseleave", () => {
+    if (window.scrollY > 50) {
+      desktopNav.classList.add("bg-white/10", "border-white/20");
+      desktopNav.classList.remove("bg-[#14041b]", "border-zinc-200");
+    }
+  });
+}
 
 // mobile nav scroll script
 const mobileHeader = document.getElementById("mobileHeader");
@@ -78,80 +71,64 @@ const hamburger = document.getElementById("hamburger");
 let mobileMenuOpen = false;
 
 function updateMobileHeader() {
+  if (!mobileHeader) return;
   const isScrolled = window.scrollY > 20;
 
   mobileHeader.classList.remove(
     "bg-white/10",
     "backdrop-blur-md",
     "border-b",
-    "bg-white",
-    "border-zinc-200"
+    "border-white/10",
+    "bg-[#14041b]/95"
   );
 
-  if (mobileMenuOpen) {
-    // Solid header while the menu is open
-    mobileHeader.classList.add("bg-white", "border-b", "border-zinc-200");
-  } else if (isScrolled) {
-    // Translucent, blurred header while scrolling
+  if (mobileMenuOpen || isScrolled) {
     mobileHeader.classList.add(
-      "bg-white/10",
+      "bg-[#14041b]/95",
       "backdrop-blur-md",
+      "border-b",
+      "border-white/10"
     );
   }
-
-  // Dark hamburger lines on a white header;
-  // white lines over the hero when at the top.
-  const lineColor = mobileMenuOpen ? "bg-zinc-800" : "bg-zinc-100";
-
-  ["bar1", "bar2", "bar3"].forEach((id) => {
-    const line = document.getElementById(id);
-    line.classList.remove("bg-zinc-100", "bg-zinc-800");
-    line.classList.add(lineColor);
-  });
 }
 
 function toggleMenu() {
   mobileMenuOpen = !mobileMenuOpen;
 
-  mobileMenu.classList.toggle("hidden", !mobileMenuOpen);
-  mobileMenu.classList.toggle("flex", mobileMenuOpen);
+  const menu = document.getElementById("mobileMenu");
+  const bar1 = document.getElementById("bar1");
+  const bar2 = document.getElementById("bar2");
+  const bar3 = document.getElementById("bar3");
 
-  hamburger.setAttribute("aria-expanded", String(mobileMenuOpen));
+  if (menu) {
+    menu.classList.toggle("hidden", !mobileMenuOpen);
+    menu.classList.toggle("flex", mobileMenuOpen);
+  }
+
+  if (bar1 && bar2 && bar3) {
+    if (mobileMenuOpen) {
+      bar1.classList.add("rotate-45", "translate-y-2");
+      bar2.classList.add("opacity-0");
+      bar3.classList.add("-rotate-45", "-translate-y-2");
+    } else {
+      bar1.classList.remove("rotate-45", "translate-y-2");
+      bar2.classList.remove("opacity-0");
+      bar3.classList.remove("-rotate-45", "-translate-y-2");
+    }
+  }
+
+  if (hamburger) {
+    hamburger.setAttribute("aria-expanded", String(mobileMenuOpen));
+  }
 
   updateMobileHeader();
 }
 
 window.addEventListener("scroll", updateMobileHeader, { passive: true });
-
 updateMobileHeader();
 
-    let menuOpen = false;
-    function toggleMenu() {
-        menuOpen = !menuOpen;
-        const menu = document.getElementById('mobileMenu');
-        const bar1 = document.getElementById('bar1');
-        const bar2 = document.getElementById('bar2');
-        const bar3 = document.getElementById('bar3');
-        if (menuOpen) {
-            menu.classList.remove('hidden');
-            menu.classList.add('flex');
-            bar1.classList.add('rotate-45', 'translate-y-2');
-            bar2.classList.add('opacity-0');
-            bar3.classList.add('-rotate-45', '-translate-y-2');
-        } else {
-            menu.classList.add('hidden');
-            menu.classList.remove('flex');
-            bar1.classList.remove('rotate-45', 'translate-y-2');
-            bar2.classList.remove('opacity-0');
-            bar3.classList.remove('-rotate-45', '-translate-y-2');
-        }
-    }
 
-
-    //scroller
-
-    
-
+//scroller
 const games = [
   {
     name: "Valorant Points",
@@ -214,7 +191,6 @@ const games = [
     logo: "media/logos/blood-strike.png",
   }
 ];
-
 
 const gameList = document.getElementById("game-list");
 const gameListClone = document.getElementById("game-list-clone");
