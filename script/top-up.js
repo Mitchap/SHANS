@@ -402,16 +402,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
     return `
       <div 
-        class="game-card w-full min-w-0 bg-white rounded-lg md:rounded-2xl pb-2 md:pb-4 overflow-hidden border border-gray-200 hover:-translate-y-1 hover:shadow-xl hover:border-purple-400/60 transition-all duration-300 cursor-pointer group focus:outline-none focus:ring-2 focus:ring-purple-500"
+         class="game-card w-full min-w-0 bg-white rounded-lg md:rounded-2xl pb-2 md:pb-3 overflow-hidden border border-gray-200 hover:-translate-y-1 hover:shadow-xl hover:border-purple-400/60 transition-all duration-300 cursor-pointer group focus:outline-none focus:ring-2 focus:ring-purple-500"
         data-id="${escapeHtml(game.id)}"
         data-category="${escapeHtml(game.category)}"
         tabindex="0"
         role="button"
         aria-label="View price list and top up ${escapeHtml(game.name)}"
       >
-        <div class="overflow-hidden rounded-b-[50%_12%] bg-slate-900 relative">
+        <div class="overflow-hidden rounded-b-[50%_12%] bg-slate-900 relative aspect-4/3">
           <img
-            class=""w-full h-20 md:h-28 lg:h-44 xl:h-52 object-cover object-top transition duration-300 group-hover:scale-105"
+            class="w-full h-full object-cover object-center transition duration-300 group-hover:scale-105"
             src="${escapeHtml(game.image)}"
             alt="${escapeHtml(game.name)}"
             loading="lazy"
