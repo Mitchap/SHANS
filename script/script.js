@@ -156,77 +156,62 @@ const games = [
   {
     name: "Valorant Points",
     logo: "media/logos/valorant.png",
-    link: "catalogue.html#valorant"
   },
   {
     name: "Mobile Legends: Bang Bang",
     logo: "media/logos/mlbb.png",
-    link: "catalogue.html#mlbb"
   },
   {
     name: "League of Legends: Riot Points",
     logo: "media/logos/league-of-legends.png",
-    link: "catalogue.html#riot-points"
   },
   {
     name: "Wild Rift: Wild Cores",
     logo: "media/logos/wild-rift.png",
-    link: "catalogue.html#wild-cores"
   },
   {
     name: "Genshin Impact: Genesis Crystals",
     logo: "media/logos/genshin-impact.png",
-    link: "catalogue.html#genesis-crystals"
   },
   {
     name: "Honkai: Star Rail: Oneiric Shards",
     logo: "media/logos/honkai-star-rail.png",
-    link: "catalogue.html#oneiric-shards"
   },
   {
     name: "DNMC Cash Packs",
     logo: "media/logos/dragon-nest.png",
-    link: "catalogue.html#dnmc-cash"
   },
   {
     name: "Zenless Zone Zero: Monochrome",
     logo: "media/logos/zenless-zone-zero.png",
-    link: "catalogue.html#zzz-monochrome"
   },
   {
     name: "Call of Duty: Mobile Points",
     logo: "media/logos/cod-mobile.png",
-    link: "catalogue.html#codm-points"
   },
   {
     name: "Undawn: Raven Coins",
     logo: "media/logos/undawn.png",
-    link: "catalogue.html#raven-coins"
   },
   {
     name: "Teamfight Tactics Coins",
     logo: "media/logos/teamfight-tactics.png",
-    link: "catalogue.html#tft-coins"
   },
   {
     name: "CrossFire E-Coins",
     logo: "media/logos/crossfire.png",
-    link: "catalogue.html#crossfire-ecoins"
   },
   {
     name: "Legends of Runeterra Coins",
     logo: "media/logos/legends-of-runeterra.png",
-    link: "catalogue.html#runeterra-coins"
   },
   {
     name: "MCGH Diamonds",
     logo: "media/logos/magic-chess.png",
-    link: "catalogue.html#mcgh-diamonds"
   },
   {
     name: "Blood Strike Gold & Pass",
     logo: "media/logos/blood-strike.png",
-    link: "catalogue.html#blood-strike"
   }
 ];
 
@@ -238,7 +223,6 @@ function createGameLogo(game, isClone = false) {
   const link = document.createElement("a");
 
   link.className = "game-logo-link";
-  link.href = game.link;
   link.title = game.name;
 
   if (isClone) {

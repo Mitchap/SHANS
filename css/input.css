@@ -26,6 +26,66 @@ body {
     background-repeat: no-repeat;
 }
 
+/* divider slant */
+.custom-shape-divider-top-1793296049 {
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    z-index: 10;
+}
+
+.custom-shape-divider-top-1793296049 svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 110px;
+    transform: rotateY(180deg);
+}
+
+.custom-shape-divider-top-1793296049 .shape-fill {
+    fill: #14041b;
+}
+
+/** For mobile devices **/
+@media (max-width: 767px) {
+    .custom-shape-divider-top-1793296049 svg {
+        width: calc(100% + 1.3px);
+        height: 69px;
+    }
+}
+
+/* divider waves */
+.custom-shape-divider-top-1793800082 {
+    position: absolute;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.custom-shape-divider-top-1793800082 svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 137px;
+}
+
+.custom-shape-divider-top-1793800082 .shape-fill-1 {
+    fill: #14041B;
+}
+
+.custom-shape-divider-top-1793800082 .shape-fill-2 {
+    fill: #290645;
+}
+
+/* gradient radial */
+.purple-radial{
+  /*
+* Created with https://www.css-gradient.com
+* Gradient link: https://www.css-gradient.com/?blobs=1a0033@18,18;430772@70,10;6a0dad@94,57;c77dff@57,94;1a0033@10,70&base=1a0033&gt=m&from=css
+*/
+background: radial-gradient(at 18% 18%, #1A0033, transparent 70%), radial-gradient(at 70% 10%, #430772, transparent 70%), radial-gradient(at 94% 57%, #6A0DAD, transparent 70%), radial-gradient(at 57% 94%, #C77DFF, transparent 70%), radial-gradient(at 10% 70%, #1A0033, transparent 70%), #1A0033;
+}
+
 .font-anton {
   font-family: "Anton", sans-serif;
 }
