@@ -74,7 +74,7 @@
 
 
         <a
-          href="#"
+          href="#reviews"
           class="px-4 py-1.5 rounded-full text-sm transition-colors text-zinc-500 hover:text-zinc-100"
           >Reviews</a
         >
@@ -130,33 +130,32 @@
 <!-- Mobile Menu -->
 <div
   id="mobileMenu"
-  class="hidden fixed top-17 left-0 w-full bg-white
-         border-t border-zinc-200 flex-col p-5 gap-1
-         lg:hidden z-98"
+  class="hidden fixed top-17 left-0 w-full bg-[#14041b]/95
+         backdrop-blur-md border-b border-white/10 flex-col p-5 gap-1.5
+         lg:hidden z-98 shadow-2xl"
 >
-
-
   <a
     href="index.html"
-    class="block px-4 py-2.5 rounded-lg text-sm bg-zinc-100 font-medium text-zinc-800"
+    class="block px-4 py-2.5 rounded-lg text-sm bg-white font-semibold text-zinc-900 shadow-xs"
   >Home</a>
 
   <a
     href="top-up.html"
-    class="block px-4 py-2.5 rounded-lg text-sm text-zinc-500 hover:bg-zinc-50"
+    class="block px-4 py-2.5 rounded-lg text-sm text-neutral-300 font-medium hover:bg-white/10 hover:text-white transition-colors"
   >Top-Up</a>
 
   <a
-    href="#"
-    class="block px-4 py-2.5 rounded-lg text-sm text-zinc-500 hover:bg-zinc-50"
+    href="#reviews"
+    onclick="toggleMenu()"
+    class="block px-4 py-2.5 rounded-lg text-sm text-neutral-300 font-medium hover:bg-white/10 hover:text-white transition-colors"
   >Reviews</a>
 
   <a
-    href="#"
-    class="block px-4 py-2.5 rounded-lg text-sm text-zinc-500 hover:bg-zinc-50"
+    href="#about"
+    onclick="toggleMenu()"
+    class="block px-4 py-2.5 rounded-lg text-sm text-neutral-300 font-medium hover:bg-white/10 hover:text-white transition-colors"
   >About</a>
-</div>
-    </nav>
+</div></nav>
     <!-- Hero section -->
 
   <main class="flex-1">
@@ -253,8 +252,8 @@ animate__animated animate__fadeIn  animate__delay-1s">
                 alt="Mobile Legends"
             >
         </div>
-        <div class="flex flex-col items-center">
-            <p class="font-medium mt-3">Mobile Legends</p>
+        <div class="flex flex-col items-center px-1">
+            <p class="font-medium text-[8px] md:text-base text-center mt-2 md:mt-3">Mobile Legends</p>
         </div>
     </div>
 
@@ -266,8 +265,8 @@ animate__animated animate__fadeIn  animate__delay-1s">
                 alt="Call of Duty: Mobile"
             >
         </div>
-        <div class="flex flex-col items-center">
-            <p class="font-medium mt-3">Call of Duty: Mobile</p>
+        <div class="flex flex-col items-center px-1">
+            <p class="font-medium text-[8px] md:text-base text-center mt-2 md:mt-3">Call of Duty: Mobile</p>
         </div>
     </div>
 
@@ -278,9 +277,10 @@ animate__animated animate__fadeIn  animate__delay-1s">
                 src="media/valorant-card.jpg"
                 alt="Valorant"
             >
+            
         </div>
-        <div class="flex flex-col items-center">
-            <p class="font-medium mt-3">Valorant</p>
+        <div class="flex flex-col items-center px-1">
+            <p class="font-medium text-[8px] md:text-base text-center mt-2 md:mt-3">Valorant</p>
         </div>
     </div>
 </div>
@@ -293,15 +293,64 @@ animate__animated animate__fadeIn  animate__delay-1s">
         </div>
     </div>
 </section>
+<!-- load to gcash -->
+<section class="relative w-full pt-20 lg:-mb-16 md:pt-28 bg-[#290645] overflow-hidden">
+  <div class="custom-shape-divider-top-1793800082 pointer-events-none">
+    <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+      <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill-1"></path>
+    </svg>
+  </div>
+  <div class="relative z-10 flex flex-row items-center justify-center px-4 -mt-10">
+    <h1 class="text-3xl md:text-4xl font-bold text-white text-center">Explore more services!</h1>
+  </div>
+  <div class="relative z-10 max-w-6xl mx-auto px-6 md:px-12 flex flex-col md:flex-row items-center justify-center gap-10 md:gap-20 lg:gap-36 mt-10 md:mt-16">
+    <div class="flex flex-col items-center md:items-start text-center md:text-left">
+      <h2 class="text-neutral-200 font-anton font-medium text-2xl md:text-4xl tracking-wider">LOAD TO <span class="text-amber-400">GCASH</span></h2>
+      <p class="text-neutral-300 font-montserrat text-base md:text-lg font-medium mt-3 md:mt-4 max-w-md">Convert your available mobile load into GCash.</p>
+      <div class="flex justify-center md:justify-start mt-8 md:mt-10">
+        <a href="https://m.me/61592914542838" class="flex items-center gap-2 text-sm text-white border border-neutral-100 px-4 py-2 rounded-lg transition-colors group">
+          Convert now
+          <svg class='transition-transform duration-300 group-hover:translate-x-1' width="11" height="11" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M.5 5.164h9.333M5.167.5l4.666 4.667-4.666 4.666" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+    </div>
+    <img src="media/gcash-phone.png" class="w-56 sm:w-64 md:w-72 object-contain shrink-0 drop-shadow-2xl" alt="Load to GCash mobile phone graphic">
+  </div>
+</section>
 
+<!-- fund transfer -->
+<section class="relative w-full pt-20 md:pt-28 pb-20 bg-[#14041B] overflow-hidden">
+  <div class="custom-shape-divider-top-1793800082 pointer-events-none">
+    <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+        <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill-2"></path>
+    </svg>
+  </div>
+  <div class="relative z-10 max-w-6xl mx-auto px-6 md:px-12 flex flex-col md:flex-row-reverse items-center justify-center gap-10 md:gap-20 lg:gap-36">
+    <div class="flex flex-col items-center md:items-start text-center md:text-left">
+      <h2 class="text-neutral-200 font-anton tracking-wider font-medium text-2xl md:text-4xl"><span class="text-amber-400">FUND TRANSFER</span> TO E-Wallets</h2>
+      <p class="text-neutral-300 text-base md:text-lg font-medium mt-3 md:mt-4 max-w-md">Need to transfer funds? Ask about <br class="hidden sm:inline">available e-wallet and bank transfer options.</p>
+      <div class="flex justify-center md:justify-start mt-8 md:mt-10">
+        <a href="https://m.me/61592914542838" class="flex items-center gap-2 text-sm text-white border border-neutral-100 px-4 py-2 rounded-lg transition-colors group">
+          Transfer now
+          <svg class='transition-transform duration-300 group-hover:translate-x-1' width="11" height="11" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M.5 5.164h9.333M5.167.5l4.666 4.667-4.666 4.666" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+    </div>
+    <img src="media/credit-card.png" class="w-56 sm:w-64 md:w-72 object-contain shrink-0 drop-shadow-2xl" alt="Fund transfer credit card graphic">
+  </div>
+</section>
 
 <!-- Reviews -->
-
-<section class="px-4 py-12 sm:px-6 md:py-16 lg:px-8">
+<div class="custom-shape-divider-top-1793296049 -mb-16 md:-mb-24 lg:-mb-26">
+    <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+        <path d="M1200 120L0 16.48 0 0 1200 0 1200 120z" class="shape-fill"></path>
+    </svg>
+</div>
+<section id="reviews" class="px-4 py-12 sm:px-6 md:py-16 lg:px-8 purple-radial w-full  ">
   <div class="mx-auto max-w-7xl">
 
     <!-- Section heading -->
-    <div class="mx-auto max-w-2xl text-center">
+    <div class="mx-auto max-w-2xl text-center mt-10">
       <p class="text-xs font-semibold uppercase tracking-[0.3em] text-neutral-400">
         Testimonials
       </p>
@@ -391,7 +440,7 @@ animate__animated animate__fadeIn  animate__delay-1s">
       </article>
 
       <!-- Testimonial 3 -->
-      <article class="flex h-full flex-col rounded-xl border border-white/10 bg-neutral-900 p-5 transition duration-300 hover:-translate-y-1 hover:border-white/25 sm:col-span-2 lg:col-span-1 sm:p-6">
+      <article class="hidden lg:flex h-full flex-col rounded-xl border border-white/10 bg-neutral-900 p-5 transition duration-300 hover:-translate-y-1 hover:border-white/25 sm:col-span-2 lg:col-span-1 sm:p-6">
 
         <svg
           class="h-9 w-9 shrink-0 text-blue-500"
@@ -435,80 +484,50 @@ animate__animated animate__fadeIn  animate__delay-1s">
 </section>
 </main>
 
-<footer class="mt-auto flex flex-wrap justify-center lg:justify-between overflow-hidden gap-10 md:gap-20 py-16 px-6 md:px-16 lg:px-24 xl:px-32 text-[13px] text-gray-500 bg-black">
+<footer id="about" class="mt-auto flex flex-wrap justify-center lg:justify-between overflow-hidden gap-10 md:gap-20 py-16 px-6 md:px-16 lg:px-24 xl:px-32 text-[13px] text-gray-500 bg-black">
   <div class="flex flex-wrap items-start gap-10 md:gap-15 xl:gap-35">
-        <a href="https://prebuiltui.com">
-            <svg width="31" height="34" viewBox="0 0 31 34" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="m8.75 5.3 6.75 3.884 6.75-3.885M8.75 28.58v-7.755L2 16.939m27 0-6.75 3.885v7.754M2.405 9.408 15.5 16.954l13.095-7.546M15.5 32V16.939M29 22.915V10.962a2.98 2.98 0 0 0-1.5-2.585L17 2.4a3.01 3.01 0 0 0-3 0L3.5 8.377A3 3 0 0 0 2 10.962v11.953A2.98 2.98 0 0 0 3.5 25.5L14 31.477a3.01 3.01 0 0 0 3 0L27.5 25.5a3 3 0 0 0 1.5-2.585" stroke="url(#a)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-                <defs>
-                    <linearGradient id="a" x1="15.5" y1="2" x2="15.5" y2="32" gradientUnits="userSpaceOnUse">
-                    <stop stop-color="#F8FAFC"/>
-                    <stop offset="1" stop-color="#383838"/>
-                    </linearGradient>
-                </defs>
-            </svg>
+        <a href="index.html" aria-label="Shan's Trade 'N Game Credits">
+            <img src="media/logo-vertical.png" class="w-20 h-22 object-contain" alt="Shan's Trade 'N Game Credits">
         </a>
         <div>
             <p class="text-slate-100 font-semibold">Product</p>
             <ul class="mt-2 space-y-2">
-                <li><a href="/" class="hover:text-indigo-600 transition">Home</a></li>
-                <li><a href="#" onclick="event.preventDefault(); if (window.ShansChatbot) window.ShansChatbot.open();" class="hover:text-indigo-600 transition">Support (AI Chat)</a></li>
-                <li><a href="/" class="hover:text-indigo-600 transition">Pricing</a></li>
-                <li><a href="/" class="hover:text-indigo-600 transition">Affiliate</a></li>
+                <li><a href="index.html" class="hover:text-purple-400 transition">Home</a></li>
+                <li><a href="#" onclick="event.preventDefault(); if (window.ShansChatbot) window.ShansChatbot.open();" class="hover:text-purple-400 transition">Support (AI Chat)</a></li>
+                <li><a href="top-up.html" class="hover:text-purple-400 transition">Top-Up & Rates</a></li>
+                <li><a href="top-up.html" class="hover:text-purple-400 transition">Inquire Services</a></li>
             </ul>
         </div>
         <div>
-            <p class="text-slate-100 font-semibold">Resources</p>
+            <p class="text-slate-100 font-semibold">Quick Links</p>
             <ul class="mt-2 space-y-2">
-                <li><a href="/" class="hover:text-indigo-600 transition">Company</a></li>
-                <li><a href="/" class="hover:text-indigo-600 transition">Blogs</a></li>
-                <li><a href="/" class="hover:text-indigo-600 transition">Community</a></li>
-                <li><a href="/" class="hover:text-indigo-600 transition">Careers<span class="text-xs text-white bg-indigo-600 rounded-md ml-2 px-2 py-1">We’re hiring!</span></a></li>
-                <li><a href="/" class="hover:text-indigo-600 transition">About</a></li>
+                <li><a href="#about" class="hover:text-purple-400 transition">About Us</a></li>
+                <li><a href="#reviews" class="hover:text-purple-400 transition">Customer Reviews</a></li>
+                <li><a href="top-up.html" class="hover:text-purple-400 transition">Supported Games</a></li>
+                <li><a href="#" onclick="event.preventDefault(); if (window.ShansChatbot) window.ShansChatbot.open();" class="hover:text-purple-400 transition">Help & FAQs</a></li>
             </ul>
         </div>
         <div>
             <p class="text-slate-100 font-semibold">Legal</p>
             <ul class="mt-2 space-y-2">
-                <li><a href="/" class="hover:text-indigo-600 transition">Privacy</a></li>
-                <li><a href="/" class="hover:text-indigo-600 transition">Terms</a></li>
+                <li><a href="#about" class="hover:text-purple-400 transition">Privacy</a></li>
+                <li><a href="#about" class="hover:text-purple-400 transition">Terms</a></li>
             </ul>
         </div>
     </div>
     <div class="flex flex-col max-md:items-center max-md:text-center gap-2 items-end">
         <p class="max-w-60">Making every customer feel valued—no matter the size of your audience.</p>
         <div class="flex items-center gap-4 mt-3">
-            <a href="https://dribbble.com/prebuiltui" target="_blank" rel="noreferrer">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-dribbble size-5 hover:text-indigo-500" aria-hidden="true">
-                    <circle cx="12" cy="12" r="10"></circle>
-                    <path d="M19.13 5.09C15.22 9.14 10 10.44 2.25 10.94"></path>
-                    <path d="M21.75 12.84c-6.62-1.41-12.14 1-16.38 6.32"></path>
-                    <path d="M8.56 2.75c4.37 6 6 9.42 8 17.72"></path>
-                </svg>
+            <a href="https://m.me/61592914542838" target="_blank" rel="noreferrer" class="flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 hover:bg-white/20 text-neutral-200 transition text-xs font-medium" aria-label="Order or Chat on Facebook Messenger">
+                <i class="fa-brands fa-facebook-messenger text-sm text-blue-400"></i>
+                <span>Messenger</span>
             </a>
-            <a href="https://www.linkedin.com/company/prebuiltui" target="_blank" rel="noreferrer">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-linkedin size-5 hover:text-indigo-500" aria-hidden="true">
-                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-                    <rect width="4" height="12" x="2" y="9"></rect>
-                    <circle cx="4" cy="4" r="2"></circle>
-                </svg>
-            </a>
-            <a href="https://x.com/prebuiltui" target="_blank" rel="noreferrer">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-twitter size-5 hover:text-indigo-500" aria-hidden="true">
-                    <path
-                        d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z">
-                    </path>
-                </svg>
-            </a>
-            <a href="https://www.youtube.com/@prebuiltui" target="_blank" rel="noreferrer">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-youtube size-6 hover:text-indigo-500" aria-hidden="true">
-                    <path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17">
-                    </path>
-                    <path d="m10 15 5-3-5-3z"></path>
-                </svg>
+            <a href="https://www.facebook.com/61592914542838" target="_blank" rel="noreferrer" class="flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 hover:bg-white/20 text-neutral-200 transition text-xs font-medium" aria-label="Visit Shan's Trade on Facebook">
+                <i class="fa-brands fa-facebook text-sm text-blue-500"></i>
+                <span>Facebook</span>
             </a>
         </div>
-        <p class="mt-3 text-center">© 2026 <a href="https://prebuiltui.com">SHAN'S TRADE 'N GAME CREDITS</a></p>
+        <p class="mt-3 text-center">© 2026 SHAN'S TRADE 'N GAME CREDITS. All rights reserved.</p>
     </div>
 </footer>
   </body>

@@ -46,14 +46,13 @@
         <!-- Desktop Nav Items -->
 <div
   id="desktopNav"
-  class="hidden md:flex fixed top-2 left-1/2 -translate-x-1/2 z-99
+  class="hidden lg:flex fixed top-2 left-1/2 -translate-x-1/2 z-99
          items-center border
          rounded-full px-1 py-1 gap-2
          transition-all duration-300 ease-in-out bg-white/10 backdrop-blur-md border-white/20"
 >
-
   <a
-    href="#"
+    href="index.html"
     aria-label="Shan's Trade 'N Game Credits - Home"
     class="flex items-center shrink-0 pl-2 pr-1 me-10"
   >
@@ -64,31 +63,27 @@
     />
   </a>
 
-        <a
-          href="index.html"
-          class="px-4 py-1.5 rounded-full text-sm transition-colors text-zinc-500 hover:text-zinc-100"
-          >Home</a
-          >
-          <a
-          href="#"
-          class="px-4 py-1.5 rounded-full text-sm transition-colors bg-white border border-zinc-200 font-medium text-zinc-800 hover:text-zinc-600"
-          >Top-Up</a
-        >
-
-
-        <a
-          href="#"
-          class="px-4 py-1.5 rounded-full text-sm transition-colors text-zinc-500 hover:text-zinc-100"
-          >Reviews</a
-        >
-        <a
-          href="#"
-          class="px-4 py-1.5 rounded-full text-sm transition-colors text-zinc-500 hover:text-zinc-100"
-          >About</a
-        >
-      </div>
-
-        <!-- Mobile Header -->
+  <a
+    href="index.html"
+    class="px-4 py-1.5 rounded-full text-sm transition-colors text-zinc-500 hover:text-zinc-100"
+    >Home</a
+  >
+  <a
+    href="top-up.html"
+    class="px-4 py-1.5 rounded-full text-sm transition-colors bg-white border border-zinc-200 font-medium text-zinc-800 hover:text-zinc-600"
+    >Top-Up</a
+  >
+  <a
+    href="index.html#reviews"
+    class="px-4 py-1.5 rounded-full text-sm transition-colors text-zinc-500 hover:text-zinc-100"
+    >Reviews</a
+  >
+  <a
+    href="index.html#about"
+    class="px-4 py-1.5 rounded-full text-sm transition-colors text-zinc-500 hover:text-zinc-100"
+    >About</a
+  >
+</div><!-- Mobile Header -->
 <div
   id="mobileHeader"
   class="lg:hidden fixed top-0 left-0 w-full z-99 flex justify-between
@@ -130,34 +125,35 @@
         </div>
 
         <!-- Mobile Menu -->
-        <div
-          id="mobileMenu"
-          class="hidden fixed top-17 left-0 w-full bg-white
-                 border-t border-zinc-200 flex-col p-5 gap-1
-                 md:hidden z-98"
-        >
-          <a
-            href="index.html"
-            class="block px-4 py-2.5 rounded-lg text-sm font-medium text-zinc-800"
-            >Home</a
-          >
-          <a
-            href="#"
-            class="block px-4 py-2.5 rounded-lg text-sm text-zinc-500 hover:bg-zinc-50 bg-zinc-100"
-            >Top-Up</a
-          >
-          <a
-            href="#"
-            class="block px-4 py-2.5 rounded-lg text-sm text-zinc-500 hover:bg-zinc-50"
-            >Reviews</a
-          >
-          <a
-            href="#"
-            class="block px-4 py-2.5 rounded-lg text-sm text-zinc-500 hover:bg-zinc-50"
-            >About</a
-          >
-        </div>
-      </nav>
+<div
+  id="mobileMenu"
+  class="hidden fixed top-17 left-0 w-full bg-[#14041b]/95
+         backdrop-blur-md border-b border-white/10 flex-col p-5 gap-1.5
+         lg:hidden z-98 shadow-2xl"
+>
+  <a
+    href="index.html"
+    class="block px-4 py-2.5 rounded-lg text-sm text-neutral-300 font-medium hover:bg-white/10 hover:text-white transition-colors"
+    >Home</a
+  >
+  <a
+    href="top-up.html"
+    class="block px-4 py-2.5 rounded-lg text-sm bg-white font-semibold text-zinc-900 shadow-xs"
+    >Top-Up</a
+  >
+  <a
+    href="index.html#reviews"
+    onclick="toggleMenu()"
+    class="block px-4 py-2.5 rounded-lg text-sm text-neutral-300 font-medium hover:bg-white/10 hover:text-white transition-colors"
+    >Reviews</a
+  >
+  <a
+    href="index.html#about"
+    onclick="toggleMenu()"
+    class="block px-4 py-2.5 rounded-lg text-sm text-neutral-300 font-medium hover:bg-white/10 hover:text-white transition-colors"
+    >About</a
+  >
+</div></nav>
     </div>
 
     <main class="flex-1 mt-6 md:mt-10">
@@ -485,176 +481,70 @@
       </div>
     </div>
 
-    <footer
-      class="mt-auto flex flex-wrap justify-center lg:justify-between overflow-hidden gap-10 md:gap-20 py-16 px-6 md:px-16 lg:px-24 xl:px-32 text-[13px] text-gray-500 bg-black"
-    >
-      <div class="flex flex-wrap items-start gap-10 md:gap-15 xl:gap-35">
-        <a href="https://prebuiltui.com">
-          <svg
-            width="31"
-            height="34"
-            viewBox="0 0 31 34"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="m8.75 5.3 6.75 3.884 6.75-3.885M8.75 28.58v-7.755L2 16.939m27 0-6.75 3.885v7.754M2.405 9.408 15.5 16.954l13.095-7.546M15.5 32V16.939M29 22.915V10.962a2.98 2.98 0 0 0-1.5-2.585L17 2.4a3.01 3.01 0 0 0-3 0L3.5 8.377A3 3 0 0 0 2 10.962v11.953A2.98 2.98 0 0 0 3.5 25.5L14 31.477a3.01 3.01 0 0 0 3 0L27.5 25.5a3 3 0 0 0 1.5-2.585"
-              stroke="url(#a)"
-              stroke-width="2.5"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-            <defs>
-              <linearGradient
-                id="a"
-                x1="15.5"
-                y1="2"
-                x2="15.5"
-                y2="32"
-                gradientUnits="userSpaceOnUse"
-              >
-                <stop stop-color="#F8FAFC" />
-                <stop offset="1" stop-color="#383838" />
-              </linearGradient>
-            </defs>
-          </svg>
-        </a>
-        <div>
-          <p class="text-slate-100 font-semibold">Product</p>
-          <ul class="mt-2 space-y-2">
-            <li><a href="/" class="hover:text-indigo-600 transition">Home</a></li>
-            <li>
-              <a
-                href="#"
-                onclick="event.preventDefault(); if (window.ShansChatbot) window.ShansChatbot.open();"
-                class="hover:text-indigo-600 transition"
-                >Support (AI Chat)</a
-              >
-            </li>
-            <li><a href="/" class="hover:text-indigo-600 transition">Pricing</a></li>
-            <li><a href="/" class="hover:text-indigo-600 transition">Affiliate</a></li>
-          </ul>
-        </div>
-        <div>
-          <p class="text-slate-100 font-semibold">Resources</p>
-          <ul class="mt-2 space-y-2">
-            <li><a href="/" class="hover:text-indigo-600 transition">Company</a></li>
-            <li><a href="/" class="hover:text-indigo-600 transition">Blogs</a></li>
-            <li><a href="/" class="hover:text-indigo-600 transition">Community</a></li>
-            <li>
-              <a href="/" class="hover:text-indigo-600 transition"
-                >Careers<span
-                  class="text-xs text-white bg-indigo-600 rounded-md ml-2 px-2 py-1"
-                  >We’re hiring!</span
-                ></a
-              >
-            </li>
-            <li><a href="/" class="hover:text-indigo-600 transition">About</a></li>
-          </ul>
-        </div>
-        <div>
-          <p class="text-slate-100 font-semibold">Legal</p>
-          <ul class="mt-2 space-y-2">
-            <li><a href="/" class="hover:text-indigo-600 transition">Privacy</a></li>
-            <li><a href="/" class="hover:text-indigo-600 transition">Terms</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="flex flex-col max-md:items-center max-md:text-center gap-2 items-end">
-        <p class="max-w-60">
-          Making every customer feel valued—no matter the size of your audience.
-        </p>
-        <div class="flex items-center gap-4 mt-3">
-          <a href="https://dribbble.com/prebuiltui" target="_blank" rel="noreferrer">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              class="lucide lucide-dribbble size-5 hover:text-indigo-500"
-              aria-hidden="true"
-            >
-              <circle cx="12" cy="12" r="10"></circle>
-              <path d="M19.13 5.09C15.22 9.14 10 10.44 2.25 10.94"></path>
-              <path d="M21.75 12.84c-6.62-1.41-12.14 1-16.38 6.32"></path>
-              <path d="M8.56 2.75c4.37 6 6 9.42 8 17.72"></path>
-            </svg>
-          </a>
+    <footer id="about" class="mt-auto flex flex-wrap justify-center lg:justify-between overflow-hidden gap-10 md:gap-20 py-16 px-6 md:px-16 lg:px-24 xl:px-32 text-[13px] text-gray-500 bg-black">
+  <div class="flex flex-wrap items-start gap-10 md:gap-15 xl:gap-35">
+    <a href="index.html" aria-label="Shan's Trade 'N Game Credits">
+      <img src="media/logo-vertical.png" class="w-20 h-22 object-contain" alt="Shan's Trade 'N Game Credits">
+    </a>
+    <div>
+      <p class="text-slate-100 font-semibold">Product</p>
+      <ul class="mt-2 space-y-2">
+        <li><a href="index.html" class="hover:text-purple-400 transition">Home</a></li>
+        <li>
           <a
-            href="https://www.linkedin.com/company/prebuiltui"
-            target="_blank"
-            rel="noreferrer"
+            href="#"
+            onclick="event.preventDefault(); if (window.ShansChatbot) window.ShansChatbot.open();"
+            class="hover:text-purple-400 transition"
+            >Support (AI Chat)</a
           >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              class="lucide lucide-linkedin size-5 hover:text-indigo-500"
-              aria-hidden="true"
-            >
-              <path
-                d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"
-              ></path>
-              <rect width="4" height="12" x="2" y="9"></rect>
-              <circle cx="4" cy="4" r="2"></circle>
-            </svg>
-          </a>
-          <a href="https://x.com/prebuiltui" target="_blank" rel="noreferrer">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              class="lucide lucide-twitter size-5 hover:text-indigo-500"
-              aria-hidden="true"
-            >
-              <path
-                d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"
-              ></path>
-            </svg>
-          </a>
-          <a href="https://www.youtube.com/@prebuiltui" target="_blank" rel="noreferrer">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              class="lucide lucide-youtube size-6 hover:text-indigo-500"
-              aria-hidden="true"
-            >
-              <path
-                d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17"
-              ></path>
-              <path d="m10 15 5-3-5-3z"></path>
-            </svg>
-          </a>
-        </div>
-        <p class="mt-3 text-center">
-          © 2026 <a href="https://prebuiltui.com">SHAN'S TRADE 'N GAME CREDITS</a>
-        </p>
-      </div>
-    </footer>
+        </li>
+        <li><a href="top-up.html" class="hover:text-purple-400 transition">Top-Up & Rates</a></li>
+        <li><a href="top-up.html" class="hover:text-purple-400 transition">Inquire Services</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="text-slate-100 font-semibold">Quick Links</p>
+      <ul class="mt-2 space-y-2">
+        <li><a href="index.html#about" class="hover:text-purple-400 transition">About Us</a></li>
+        <li><a href="index.html#reviews" class="hover:text-purple-400 transition">Customer Reviews</a></li>
+        <li><a href="top-up.html" class="hover:text-purple-400 transition">Supported Games</a></li>
+        <li>
+          <a
+            href="#"
+            onclick="event.preventDefault(); if (window.ShansChatbot) window.ShansChatbot.open();"
+            class="hover:text-purple-400 transition"
+            >Help & FAQs</a
+          >
+        </li>
+      </ul>
+    </div>
+    <div>
+      <p class="text-slate-100 font-semibold">Legal</p>
+      <ul class="mt-2 space-y-2">
+        <li><a href="index.html#about" class="hover:text-purple-400 transition">Privacy</a></li>
+        <li><a href="index.html#about" class="hover:text-purple-400 transition">Terms</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="flex flex-col max-md:items-center max-md:text-center gap-2 items-end">
+    <p class="max-w-60">
+      Making every customer feel valued—no matter the size of your audience.
+    </p>
+    <div class="flex items-center gap-4 mt-3">
+      <a href="https://m.me/61592914542838" target="_blank" rel="noreferrer" class="flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 hover:bg-white/20 text-neutral-200 transition text-xs font-medium" aria-label="Order or Chat on Facebook Messenger">
+        <i class="fa-brands fa-facebook-messenger text-sm text-blue-400"></i>
+        <span>Messenger</span>
+      </a>
+      <a href="https://www.facebook.com/61592914542838" target="_blank" rel="noreferrer" class="flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 hover:bg-white/20 text-neutral-200 transition text-xs font-medium" aria-label="Visit Shan's Trade on Facebook">
+        <i class="fa-brands fa-facebook text-sm text-blue-500"></i>
+        <span>Facebook</span>
+      </a>
+    </div>
+    <p class="mt-3 text-center">
+      © 2026 SHAN'S TRADE 'N GAME CREDITS. All rights reserved.
+    </p>
+  </div>
+</footer>
   </body>
   <script src="script/script.js"></script>
   <script src="script/top-up.js"></script>
