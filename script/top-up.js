@@ -373,9 +373,6 @@ document.addEventListener("DOMContentLoaded", () => {
     if (game.name.toLowerCase().includes(q)) return true;
     if (game.id.toLowerCase().includes(q)) return true;
 
-    // Match category
-    if (game.category.toLowerCase().includes(q)) return true;
-
     // Match currencies
     if (
       Array.isArray(game.currencies) &&
@@ -388,6 +385,14 @@ document.addEventListener("DOMContentLoaded", () => {
     if (
       Array.isArray(game.searchTerms) &&
       game.searchTerms.some((term) => term.toLowerCase().includes(q))
+    ) {
+      return true;
+    }
+
+    // Match aliases
+    if (
+      Array.isArray(game.aliases) &&
+      game.aliases.some((alias) => alias.toLowerCase().includes(q))
     ) {
       return true;
     }
